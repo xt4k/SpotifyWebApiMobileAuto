@@ -26,10 +26,9 @@ public class DriverHelper {
     }
 
     public static String getWebRemoteDriver() {  // https://%s:%s@selenoid.autotests.cloud/wd/hub/
-        return "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-                /*String.format(getDriverConfig().webRemoteDriverUrl(),
+        return String.format(getDriverConfig().webRemoteDriverUrl(),
                 getDriverConfig().webRemoteDriverUser(),
-                getDriverConfig().webRemoteDriverPassword());*/
+                getDriverConfig().webRemoteDriverPassword());
     }
 
     public static boolean isRemoteWebDriver() { return getDriverConfig().webRemoteDriverUrl()!=null; }
