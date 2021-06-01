@@ -1,0 +1,40 @@
+package autotests.helpers;
+
+import static autotests.drivers.DriverHelper.getDriverConfig;
+import static io.restassured.RestAssured.given;
+import static java.lang.System.getProperty;
+
+
+public class BrowserstackHelper {
+
+    public static String getBrowserstackVideoUrl(String sessionId) {
+        String video_url = given()
+                .auth().basic(getDriverConfig().getBsUser(), getDriverConfig().getBsAccessKey())
+                .when()
+                .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
+                .then()
+                .statusCode(200)
+                .extract()
+                .response()
+                .path("automation_session.video_url");
+
+        System.out.println("video_url: " + video_url);
+        return video_url;
+    }
+
+    public static String getBSPublicLink(String sessionId) {
+        String publicUrl = given()
+                .auth().basic(getProperty("bs.user"), getProperty("bs.key"))
+                .when()
+                .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
+                .then()
+                .statusCode(200)
+                .extract()
+                .response()
+                .path("automation_session.public_url");
+
+        System.out.println("bs_public_url: " + publicUrl);
+        System.out.println("bs_build_url: " + publicUrl.split("/sessions/")[0]);
+        return publicUrl;
+    }
+}
