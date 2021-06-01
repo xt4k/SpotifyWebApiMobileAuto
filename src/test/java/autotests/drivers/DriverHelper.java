@@ -31,7 +31,7 @@ public class DriverHelper {
                 getDriverConfig().webRemoteDriverPassword());
     }
 
-    public static boolean isRemoteWebDriver() { return !"".equals(getDriverConfig().webRemoteDriverUrl()); }
+    public static boolean isRemoteWebDriver() { return getDriverConfig().webRemoteDriverUrl()!=null; }
 
     public static String getVideoUrl() { return getDriverConfig().videoStorage(); }
 

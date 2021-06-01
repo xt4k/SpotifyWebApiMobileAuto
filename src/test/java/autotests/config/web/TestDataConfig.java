@@ -8,7 +8,6 @@ import java.util.List;
 @Config.Sources({
         "system:properties",
         "classpath:testdata/testdata.properties",
-        // "classpath:config/web.properties",
         "classpath:config/app.properties"
 })
 public interface TestDataConfig extends Config {
