@@ -23,7 +23,7 @@ import static java.lang.String.valueOf;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("Api tests")
-@Tags({@Tag("api"),@Tag("spotify_testsuite")})
+@Tags({@Tag("api"), @Tag("spotify_testsuite")})
 @Owner("xt4k")
 class ApiTests extends TestBase {
     private static SpecClient client = new SpecClient();

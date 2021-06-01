@@ -16,10 +16,7 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -36,7 +33,7 @@ import static java.time.LocalDate.now;
 import static java.time.format.DateTimeFormatter.ofPattern;
 
 @Feature("SignUp tests.")
-@Tag("signup")
+@Tags({@Tag("signup"), @Tag("spotify_testsuite")})
 @Story("Login tests with CAPTCHA WORKAROUND")
 @Owner("xt4k")
 public class SignUpTests extends TestBase {

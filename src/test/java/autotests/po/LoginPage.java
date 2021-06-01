@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class LoginPage extends BasePageObject {
@@ -26,7 +27,7 @@ public class LoginPage extends BasePageObject {
     @Step("Login.")
     public PlaylistPage login() {
         seLogin.click();
-        insertCookie();
+        sleep(1000);
         return new PlaylistPage();
     }
 }

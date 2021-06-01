@@ -57,19 +57,13 @@ public class MobileDriver implements WebDriverProvider {
                 customDriver = new IOSDriver(getUrl(capabilities), capabilities);
             else
                 customDriver = new AndroidDriver<>(getUrl(capabilities), capabilities);
-
         }
         else if (getDriverConfig().mobileCloud().contains("emulator")) {
-
             capabilities.setCapability(NEW_COMMAND_TIMEOUT, 20);
             capabilities.setCapability(FULL_RESET, false);
 
             customDriver = new AndroidDriver(getUrl(capabilities), capabilities);
         }
-
-        step("capabilities1: " + capabilities);
-        step("interface srv: " + getDriverConfig().getServer());
-        step("capability srv: " + capabilities.getCapability("server"));
         return customDriver;
     }
 

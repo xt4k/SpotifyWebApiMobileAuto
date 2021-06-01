@@ -2,7 +2,6 @@ package autotests.helpers;
 
 import static autotests.drivers.DriverHelper.getDriverConfig;
 import static io.restassured.RestAssured.given;
-import static java.lang.System.getProperty;
 
 
 public class BrowserstackHelper {
@@ -24,7 +23,7 @@ public class BrowserstackHelper {
 
     public static String getBSPublicLink(String sessionId) {
         String publicUrl = given()
-                .auth().basic(getProperty("bs.user"), getProperty("bs.key"))
+                .auth().basic(getDriverConfig().getBsUser(), getDriverConfig().getBsAccessKey())
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
                 .then()

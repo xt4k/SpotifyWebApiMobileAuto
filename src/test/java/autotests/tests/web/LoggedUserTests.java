@@ -1,19 +1,17 @@
 package autotests.tests.web;
 
+import autotests.po.AccountMenuWidget;
 import autotests.po.MainMenuWidget;
 import autotests.pojo.web.Playlist;
 import autotests.tests.TestBase;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 @Feature("Web tests")
 @Story("Registered User tests")
-@Tag("web")
+@Tags({@Tag("web"), @Tag("spotify_testsuite"), @Tag("logged")})
 @Owner("xt4k")
 public class LoggedUserTests extends TestBase {
     Playlist playlist = new Playlist();
@@ -21,6 +19,11 @@ public class LoggedUserTests extends TestBase {
     @BeforeEach
     void loginAccount() {
         po.loginToAccount();
+    }
+
+    @AfterEach
+    void logOut() {
+        new AccountMenuWidget().logOut();
     }
 
 
@@ -41,4 +44,5 @@ public class LoggedUserTests extends TestBase {
                 .search(playlist.getGenre())
                 .verifyTrackInfo(playlist.getGenre());
     }
+
 }

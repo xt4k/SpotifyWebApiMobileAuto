@@ -31,17 +31,11 @@ public class DriverHelper {
                 getDriverConfig().webRemoteDriverPassword());
     }
 
-    public static boolean isRemoteWebDriver() {
-        return !getDriverConfig().webRemoteDriverUrl().equals("");
-    }
+    public static boolean isRemoteWebDriver() { return !"".equals(getDriverConfig().webRemoteDriverUrl()); }
 
-    public static String getVideoUrl() {
-        return getDriverConfig().videoStorage();
-    }
+    public static String getVideoUrl() { return getDriverConfig().videoStorage(); }
 
-    public static boolean isVideoOn() {
-        return !getVideoUrl().equals("");
-    }
+    public static boolean isVideoOn() {return !"".equals(getVideoUrl()); }
 
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");

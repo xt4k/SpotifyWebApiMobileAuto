@@ -74,7 +74,8 @@ public interface DriverConfig extends Config {
     String getAbsPath();
 
 
-    @Key("app")    // @DefaultValue("bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c")
+    @Key("app")
+        // @DefaultValue("bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c")
     String getApp();
 
     //-----bs

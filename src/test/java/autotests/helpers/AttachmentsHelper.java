@@ -14,6 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import static autotests.helpers.BrowserstackHelper.getBrowserstackVideoUrl;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.addAttachment;
@@ -42,7 +43,6 @@ public class AttachmentsHelper {
         if (videoUrl != null) {
             InputStream videoInputStream = null;
             sleep(1000);
-
             for (int i = 0; i < 10; i++) {
                 try {
                     videoInputStream = videoUrl.openStream();
@@ -67,6 +67,13 @@ public class AttachmentsHelper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
+    public static String attachBsVideo(String sessionId) {
+        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+                + getBrowserstackVideoUrl(sessionId)
+                + "' type='video/mp4'></video></body></html>";
     }
 
 

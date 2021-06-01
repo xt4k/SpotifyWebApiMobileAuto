@@ -41,5 +41,8 @@ public class BasePageObject {
                 .setPass(TestData.getUserPassword())
                 .login()
                 .insertCookie();
+
+        new PopupPremium().closeIfExistPremiumPopup();
     }
+
 }

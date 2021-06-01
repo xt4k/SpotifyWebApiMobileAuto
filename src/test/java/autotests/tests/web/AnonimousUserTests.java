@@ -8,6 +8,7 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
@@ -22,7 +23,7 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 
 @Feature("Web tests")
 @Story("Anonymous User tests")
-@Tag("web")
+@Tags({@Tag("web"), @Tag("spotify_testsuite")})
 @Owner("xt4k")
 public class AnonimousUserTests extends TestBase {
 

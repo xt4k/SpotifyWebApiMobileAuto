@@ -10,8 +10,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static autotests.helpers.AttachmentsHelper.*;
 import static autotests.drivers.DriverHelper.*;
+import static autotests.helpers.AttachmentsHelper.*;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 @ExtendWith({AllureJunit5.class})
@@ -25,7 +25,6 @@ public class TestBase {
         Configuration.baseUrl = TestData.getWebUrl();
         API_TOKEN = new Auth().getToken();
         RestAssured.baseURI = TestData.getApiUrl();
-
     }
 
     @AfterEach

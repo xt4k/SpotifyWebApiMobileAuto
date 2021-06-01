@@ -8,13 +8,19 @@ import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 
+import static autotests.drivers.DriverHelper.getSessionId;
+import static autotests.helpers.AttachmentsHelper.*;
+import static autotests.helpers.BrowserstackHelper.getBSPublicLink;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static io.appium.java_client.MobileBy.AccessibilityId;
 import static io.qameta.allure.Allure.step;
+
+;
 
 @Feature("Mobile tests")
 @Story("Android")
@@ -30,13 +36,25 @@ public class AppiumAndroidTests extends TestBase {
         startMaximized = false;
         browserSize = null;
         timeout = 12000;
+        // open();
+    }
+
+    @BeforeEach
+    void openUp() {
         open();
     }
 
-  //  @BeforeEach
- //   void openUp() {
-  //      open();
-  //  }
+    @AfterEach
+    public void addAttachments() {
+        String sessionId = getSessionId();
+
+        attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachAsText("Browserstack build link", getBSPublicLink(sessionId));
+
+        closeWebDriver();
+        attachBsVideo(sessionId);
+    }
 
     @Test
     @DisplayName("Search band in mobile application `Spotify`.")

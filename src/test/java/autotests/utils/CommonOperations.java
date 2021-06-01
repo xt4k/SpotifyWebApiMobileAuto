@@ -1,7 +1,9 @@
 package autotests.utils;
 
 import io.qameta.allure.Step;
+
 import java.util.Random;
+
 import static com.codeborne.selenide.Configuration.timeout;
 import static com.codeborne.selenide.Selenide.sleep;
 
