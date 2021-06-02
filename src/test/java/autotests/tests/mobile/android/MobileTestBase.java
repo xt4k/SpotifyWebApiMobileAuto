@@ -21,14 +21,13 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 public class MobileTestBase {
 
-
     @BeforeAll
     public static void setUp() {
         addListener("AllureSelenide", new AllureSelenide());
         browser = MobAndroidDriverHelper.class.getName();
         startMaximized = false;
         browserSize = null;
-        timeout = 12000;
+        timeout = 15000;
     }
 
 

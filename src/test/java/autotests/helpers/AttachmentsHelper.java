@@ -25,6 +25,7 @@ import static autotests.helpers.BrowserstackHelper.getBrowserstackVideoUrl;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.addAttachment;
+import static io.qameta.allure.Allure.step;
 import static java.lang.String.format;
 
 
@@ -67,17 +68,19 @@ public class AttachmentsHelper {
     }
 
     public static void saveVideoLocally(String sessionId, String base64output) {
-        String dateStr = new SimpleDateFormat("ddMMyyyy_hh-mm-ss").format(new Date());
-        try {
-            byte[] data = Base64.getDecoder().decode(base64output);
-            String destinationPath = format("%s/ScreenRecord_%s.mp4", getDriverConfig().getMobileVideoStorage(), dateStr);
-            Path path = Paths.get(destinationPath);
-            Files.write(path, data); //addAttachment("Video", "video/mp4", destinationPath, "mp4");
-        } catch (IOException ex) {
-            LOG.warn("[ALLURE VIDEO RECORDS ERROR] Cant save android video, {}", sessionId);
-            ex.printStackTrace();
+        if (!(getDriverConfig().getMobileVideoStorage() ==null)) {
+            String dateStr = new SimpleDateFormat("ddMMyyyy_hh-mm-ss").format(new Date());
+            try {
+                byte[] data = Base64.getDecoder().decode(base64output);
+                String destinationPath = format("%s/ScreenRecord_%s.mp4", getDriverConfig().getMobileVideoStorage(), dateStr);
+                Path path = Paths.get(destinationPath);
+                Files.write(path, data); //addAttachment("Video", "video/mp4", destinationPath, "mp4");
+            } catch (IOException ex) {
+                LOG.warn("[ALLURE VIDEO RECORDS ERROR] Cant save android video, {}", sessionId);
+                ex.printStackTrace();
+            }
         }
-
+        else step("save only in emulator config");
     }
 
 
