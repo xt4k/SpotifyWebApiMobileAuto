@@ -22,9 +22,9 @@ public class LoginTests extends TestBase {
 
     @Tag("login")
     @Test
-    @TM4J("SX-W7")
+    @TM4J("2949")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 11. UI: Successful login spotify as Free Plan user")
+    @DisplayName("Test 13. UI: Successful login spotify as Free Plan user")
     void loginTest() {
         po.openHome();
         new TopWidget().doLogin()

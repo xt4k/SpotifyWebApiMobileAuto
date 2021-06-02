@@ -25,8 +25,8 @@ public class LoggedUserTests extends TestBase {
 
     @Test
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @TM4J("SX-W5")
-    @DisplayName("Test 09. UI: Create playlist")
+    @TM4J("2947")
+    @DisplayName("Test 11. UI: Create playlist")
     void createPlaylist() {
         new MainMenuWidget().createPlayList()
                 .change()
@@ -37,8 +37,8 @@ public class LoggedUserTests extends TestBase {
 
     @Test
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @TM4J("SX-W6")
-    @DisplayName("Test 10. UI: Find track")
+    @TM4J("2948")
+    @DisplayName("Test 12. UI: Find track")
     void findTrack() {
         new MainMenuWidget().openSearch()
                 .search(playlist.getGenre())

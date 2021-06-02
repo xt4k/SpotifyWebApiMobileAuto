@@ -30,7 +30,7 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 public class AnonimousUserTests extends TestBase {
 
     @Test
-    @TM4J("SX-W1")
+    @TM4J("2943")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @DisplayName("Test 05. UI: Check Premium Plans")
     void verifyPlansInfo() {
@@ -43,7 +43,7 @@ public class AnonimousUserTests extends TestBase {
     @Tag("download")
     @Test
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @TM4J("SX-W2")
+    @TM4J("2944")
     @DisplayName("Test 06. UI: Verify Download Windows Application button")
     void verifyDownloadWinButton() {
         step("Open Homepage", () -> open(baseUrl + "download/windows"));
@@ -64,7 +64,7 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
-    @TM4J("SX-W3")
+    @TM4J("2946")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @DisplayName("Test 07. UI: Verify Download Apple Application button")
     void verifyDownloadAppleButton() {
@@ -90,7 +90,7 @@ public class AnonimousUserTests extends TestBase {
     @Tag("download")
     @Test
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @TM4J("SX-W4")
+    @TM4J("2945")
     @DisplayName("Test 08. UI: Verify 'GET IT ON Google Play' button.")
     void verifyDownloadGoogleButton() {
         step("Open Homepage", () -> open(baseUrl + "download/windows"));

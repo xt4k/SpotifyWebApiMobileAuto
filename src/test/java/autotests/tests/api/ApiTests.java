@@ -32,6 +32,7 @@ class ApiTests extends TestBase {
     private Response response;
 
     @Story("Search")
+    @TM4J("2942")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
     @DisplayName("Test 01. Api: Search Band's Album.")
@@ -63,6 +64,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Security")
+    @TM4J("2939")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
     @DisplayName("Test 02. API: Check personal info (negative).")
@@ -78,6 +80,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Read")
+    @TM4J("2941")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
     @DisplayName("Test 03. API: Check user display name.")
@@ -94,9 +97,10 @@ class ApiTests extends TestBase {
     }
 
     @Story("Read")
+    @TM4J("2940")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
-    @DisplayName("TEst 04. API: Check if UA market available.")
+    @DisplayName("Test 04. API: Check if UA market available.")
     void checkUaMarket() {
         step("Send request about markets.", () -> {
             response = client.getInfo("/markets", 200);

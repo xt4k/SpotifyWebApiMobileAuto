@@ -25,13 +25,12 @@ import static io.qameta.allure.Allure.step;
 public class MobileAndroidTests extends MobileTestBase {
 
     @Test
-    @DisplayName("Test 13. Mobile: Search band in mobile application.")
+    @DisplayName("Test 15. Mobile: Search band in mobile application.")
     @TM4J("SX-M1")
     @JiraIssues({@JiraIssue("AUTO-226")})
     void searchBand() {
-        step("Open application", () -> {
-            $(AccessibilityId("Spotify")).click();
-        });
+
+        step("Open application", () -> $(AccessibilityId("Spotify")).click());
 
         step("Search band", () -> {
             $(MobileBy.id("com.spotify.music:id/search_tab")).click();
@@ -67,13 +66,11 @@ public class MobileAndroidTests extends MobileTestBase {
     }
 
     @Test
-    @DisplayName("Test 14. Mobile: Search composition in mobile application.")
+    @DisplayName("Test 16. Mobile: Search composition in mobile application.")
     @TM4J("SX-M2")
     @JiraIssues({@JiraIssue("AUTO-226")})
     void searchComposition() {
-        step("Open application", () -> {
-            $(AccessibilityId("Spotify")).click();
-        });
+        step("Open application", () -> $(AccessibilityId("Spotify")).click());
 
         step("Search composition", () -> {
             $(MobileBy.id("com.spotify.music:id/search_tab")).click();
@@ -103,13 +100,11 @@ public class MobileAndroidTests extends MobileTestBase {
     }
 
     @Test
-    @DisplayName("Test 15. Mobile: Check personal profile info.")
+    @DisplayName("Test 17. Mobile: Check personal profile info.")
     @TM4J("SX-M3")
     @JiraIssues({@JiraIssue("AUTO-226")})
     void verifyMyInfo() {
-        step("Open application", () -> {
-            $(AccessibilityId("Spotify")).click();
-        });
+        step("Open application", () -> $(AccessibilityId("Spotify")).click());
 
         step("Navigate to profile", () -> {
             $(MobileBy.id("com.spotify.music:id/home_tab")).click();

@@ -43,10 +43,10 @@ public class SignUpTests extends TestBase {
 
     @Tag("web")
     @Test
-    @TM4J("SX-W8")
+    @TM4J("2950")
     @JiraIssues({@JiraIssue("AUTO-226")})
     //@LabelAnnotations({@LabelAnnotation("Automatic"),@LabelAnnotation("Microphone"),("Failed test")})
-    @DisplayName("Test 12.1. UI: SignUp (lambda step, failed test)")
+    @DisplayName("Test 14. UI: SignUp (lambda step, failed test)")
     void signUpSpotify() {
         Faker faker = new Faker();
 
@@ -151,9 +151,9 @@ public class SignUpTests extends TestBase {
     @Tag("web")
     @Disabled
     @Test
-    @TM4J("SX-W9")
+    @TM4J("2951")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 12.2 UI: SignUp (step form - disabled test).")
+    @DisplayName("Test 15 UI: SignUp (step form - disabled test).")
     void signUpSpotifyNoLambda() {
         Faker faker = new Faker();
 
