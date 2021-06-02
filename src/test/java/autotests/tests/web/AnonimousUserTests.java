@@ -1,5 +1,6 @@
 package autotests.tests.web;
 
+import autotests.config.testdata.TestData;
 import autotests.po.BasePageObject;
 import autotests.po.TopWidget;
 import autotests.tests.TestBase;
@@ -45,9 +46,7 @@ public class AnonimousUserTests extends TestBase {
     @TM4J("SX-W2")
     @DisplayName("Test 06. UI: Verify Download Windows Application button")
     void verifyDownloadWinButton() {
-        step("Open Homepage", () -> {
-            open(baseUrl + "download/windows");
-        });
+        step("Open Homepage", () -> open(baseUrl + "download/windows"));
 
         step("Setup cookie", () -> {
             getWebDriver().manage().addCookie(new Cookie("OptanonAlertBoxClosed", now().format(ofPattern("yyyy-MM-dd"))));
@@ -69,9 +68,7 @@ public class AnonimousUserTests extends TestBase {
     @JiraIssues({@JiraIssue("AUTO-226")})
     @DisplayName("Test 07. UI: Verify Download Apple Application button")
     void verifyDownloadAppleButton() {
-        step("Open Homepage", () -> {
-            open(baseUrl + "download/windows");
-        });
+        step("Open Homepage", () -> open(baseUrl + "download/windows"));
 
         step("Setup cookie", () -> {
             getWebDriver().manage().addCookie(new Cookie("OptanonAlertBoxClosed", now().format(ofPattern("yyyy-MM-dd"))));
@@ -97,9 +94,7 @@ public class AnonimousUserTests extends TestBase {
     @TM4J("SX-W4")
     @DisplayName("Test 08. UI: Verify 'GET IT ON Google Play' button.")
     void verifyDownloadGoogleButton() {
-        step("Open Homepage", () -> {
-            open(baseUrl + "download/windows");
-        });
+        step("Open Homepage", () -> open(baseUrl + "download/windows"));
 
         step("Setup cookie", () -> {
             getWebDriver().manage().addCookie(new Cookie("OptanonAlertBoxClosed", now().format(ofPattern("yyyy-MM-dd"))));
@@ -112,5 +107,27 @@ public class AnonimousUserTests extends TestBase {
                     .parent()
                     .shouldHave(attribute("data-testid", "google-store-badge"));
         });
+    }
+
+    @Test
+    @TM4J("SX-W5")
+    @JiraIssues({@JiraIssue("AUTO-226")})
+    @DisplayName("Test 09. UI: Check Extended Premium Period Conditions.")
+    void verifyExtendedPremiumConditionInfoMistaken() {
+        step("Open Homepage", () -> open(baseUrl));
+        step("Navigate to premium page", () -> $("a[data-ga-action='premium']").click());
+        step("Check Advertisement label about preferential free period.", () ->
+                $("div>h1").shouldHave(text(TestData.getPreferentialPeriodWrong())));
+    }
+
+    @Test
+    @TM4J("SX-W1")
+    @JiraIssues({@JiraIssue("AUTO-226")})
+    @DisplayName("Test 10. UI: Check Extended Premium Period Conditions.")
+    void verifyExtendedPremiumConditionInfo() {
+        step("Open Homepage", () -> open(baseUrl));
+        step("Navigate to premium page", () -> $("a[data-ga-action='premium']").click());
+        step("Check Advertisement label about preferential free period.", () ->
+                $("div>h1").shouldHave(text(TestData.getPreferentialPeriod())));
     }
 }

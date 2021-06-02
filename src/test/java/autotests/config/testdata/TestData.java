@@ -38,9 +38,11 @@ public class TestData {
         return getTestData().freeMonth();
     }
 
-    public static String getFree3Month() {
-        return getTestData().free3Month();
-    }
+    public static String getFree3Month() { return getTestData().free3Month(); }
+
+    public static String getPreferentialPeriod() { return getTestData().preferentialPeriod(); }
+
+    public static String getPreferentialPeriodWrong() {return getTestData().preferentialPeriodWrong(); }
 
     public static String getMonthly() {
         return getTestData().monthly();
