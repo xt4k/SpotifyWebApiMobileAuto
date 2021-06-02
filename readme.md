@@ -2,9 +2,9 @@
 # done in frame of diploma qualification test for AQA shcool QA.GURU
 
 # Project scope:
-:white_check_mark: API tests
-:white_check_mark: UI tests
-:white_check_mark: Mobile applications tests
+:white_check_mark: API tests        
+:white_check_mark: UI tests           
+:white_check_mark: Mobile applications tests           
 
 
 Here is my Diploma project.
