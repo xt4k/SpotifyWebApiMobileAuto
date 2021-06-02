@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test;
 @Story("Login tests")
 @Owner("xt4k")
 @Tags({@Tag("web"), @Tag("spotify_testsuite")})
-@JiraIssues({@JiraIssue("XS-???")})
 @Layer("Web")
 @DisplayName("Testset for web UI login.")
 public class LoginTests extends TestBase {
@@ -23,7 +22,7 @@ public class LoginTests extends TestBase {
     @Tag("login")
     @Test
     @TM4J("SX-W7")
-    @JiraIssues({@JiraIssue("SX-W11")})
+    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W11")})
     @DisplayName("Test 11. UI: Successful login spotify as Free Plan user")
     void loginTest() {
         po.openHome();

@@ -35,7 +35,6 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 @Tags({@Tag("signup"), @Tag("spotify_testsuite")})
 @Story("Login tests with CAPTCHA WORKAROUND")
 @Owner("xt4k")
-@JiraIssues({@JiraIssue("XS-???")})
 @Layer("Web")
 @DisplayName("Testset for web UI shown automatic registration process against captcha service.")
 public class SignUpTests extends TestBase {
@@ -44,7 +43,7 @@ public class SignUpTests extends TestBase {
     @Tag("web")
     @Test
     @TM4J("SX-W8")
-    @JiraIssues({@JiraIssue("SX-W12")})
+    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W12")})
     //@LabelAnnotations({@LabelAnnotation("Automatic"),@LabelAnnotation("Microphone"),("Failed test")})
     @DisplayName("Test 12.1. UI: SignUp (lambda step, failed test)")
     void signUpSpotify() {
@@ -152,7 +151,7 @@ public class SignUpTests extends TestBase {
     @Disabled
     @Test
     @TM4J("SX-W9")
-    @JiraIssues({@JiraIssue("SX-W13")})
+    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W13")})
     @DisplayName("Test 12.2 UI: SignUp (step form - disabled test).")
     void signUpSpotifyNoLambda() {
         Faker faker = new Faker();
