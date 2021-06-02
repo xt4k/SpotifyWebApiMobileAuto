@@ -1,29 +1,27 @@
-# Spotify Autotesting project.
-# done in frame of diploma qualification test for AQA shcool QA.GURU
 
-# Project scope:
-:white_check_mark: ## API tests        
-:white_check_mark: ## UI tests           
-:white_check_mark: ## Mobile applications tests           
+![image](https://user-images.githubusercontent.com/38681283/120556173-d0631600-c404-11eb-894a-6c7ec19704ca.png)
+# SPOTIFY  Auto-test project.
+##### Done in frame of diploma qualification test for AQA school QA.GURU
+![image](https://user-images.githubusercontent.com/38681283/120552697-3a2cf100-c400-11eb-97aa-cddc3e21968a.png)
+
+# Test Levels:
+## :white_check_mark: API      
+### very fast tests that request information about artists, album, market, spotify user and verify it.
+### Tests are logging API requests, responses, expected and actual results.
+## :white_check_mark: UI            
+## :white_check_mark: Mobile applications           
 
 
-Here is my Diploma project.
+## API tests:
 
 
-I have selected Spotify, according to idea, that it should follow to 3 diretions :
+## UI testset:
+### split into 3 set of tests: for Anonymous User, Login, Sign up, Registered User tests.
+### Tests are logging only last screenshot, and video in nirmal workflow.
+### Failed tests providing screenshotof failed steps additionally.
 
-1) Interesting, at least enough to look at this project more carefully. (+)
-2) Open position on some famous site (+)
-3) It should have:
-    - web site (+);
-    - public API (+);
-    - mobile application (+);
+## Mobile Application testset (Android devices - "live" and emulated phones):
+### verifies common functionality like search band, composition, personal information. 
+### Tests are logging last screenshot, screenshot vor assrtional steps and storing test's workflow video (stored locally).
 
-For every of such layers were designed several tests. Comments:
-Web tests - splitted in 3 testset (Anonymous User, Registered, Sign Up). Because of Captcha protection against automatic
-queries - SignUp tests has no chance to be stable, but I found a small workaroun that allow from time to time go through
-captcha. But finally I decided do not waste time and left this test set as examples of failed and disabled tests. API
-tests - Spotify API has several types of access and in frame of diploma project taken easiest to design one. Mobile
-tests - Designed on localhost "live" phone and "android emulator" one. Also design ability to use mobile factory
-browserstack, but because of bad connection, for free plan, it was delayed. In general, I got an experience in lot of
-different skills, during diploma project and ready nex challenges.
+
