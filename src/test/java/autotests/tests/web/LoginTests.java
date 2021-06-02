@@ -23,6 +23,7 @@ public class LoginTests extends TestBase {
     @Tag("login")
     @Test
     @TM4J("SX-W7")
+    @JiraIssues({@JiraIssue("SX-W11")})
     @DisplayName("Test 11. UI: Successful login spotify as Free Plan user")
     void loginTest() {
         po.openHome();

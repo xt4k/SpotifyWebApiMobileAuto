@@ -8,10 +8,7 @@ import autotests.tests.api.client.SpecClient;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 
@@ -34,6 +31,7 @@ class ApiTests extends TestBase {
     private Response response;
 
     @Story("Search")
+    @JiraIssues({@JiraIssue("SX-A01")})
     @Test
     @DisplayName("Test 01. Api: Search Band's Album.")
     void searchAlbumForBand() {
@@ -64,6 +62,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Security")
+    @JiraIssues({@JiraIssue("SX-A02")})
     @Test
     @DisplayName("Test 02. API: Check personal info (negative).")
     void getProfileInfo() {
@@ -78,6 +77,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Read")
+    @JiraIssues({@JiraIssue("SX-A03")})
     @Test
     @DisplayName("Test 03. API: Check user display name.")
     void getUserProfileInfo() {
@@ -93,6 +93,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Read")
+    @JiraIssues({@JiraIssue("SX-A04")})
     @Test
     @DisplayName("TEst 04. API: Check if UA market available.")
     void checkUaMarket() {

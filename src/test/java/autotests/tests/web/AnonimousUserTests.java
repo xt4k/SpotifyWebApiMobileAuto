@@ -30,6 +30,7 @@ public class AnonimousUserTests extends TestBase {
 
     @Test
     @TM4J("SX-W1")
+    @JiraIssues({@JiraIssue("SX-W05")})
     @DisplayName("Test 05. UI: Check Premium Plans")
     void verifyPlansInfo() {
         new BasePageObject().openHome();
@@ -40,6 +41,7 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
+    @JiraIssues({@JiraIssue("SX-W06")})
     @TM4J("SX-W2")
     @DisplayName("Test 06. UI: Verify Download Windows Application button")
     void verifyDownloadWinButton() {
@@ -64,6 +66,7 @@ public class AnonimousUserTests extends TestBase {
     @Tag("download")
     @Test
     @TM4J("SX-W3")
+    @JiraIssues({@JiraIssue("SX-W07")})
     @DisplayName("Test 07. UI: Verify Download Apple Application button")
     void verifyDownloadAppleButton() {
         step("Open Homepage", () -> {
@@ -90,6 +93,7 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
+    @JiraIssues({@JiraIssue("SX-W08")})
     @TM4J("SX-W4")
     @DisplayName("Test 08. UI: Verify 'GET IT ON Google Play' button.")
     void verifyDownloadGoogleButton() {

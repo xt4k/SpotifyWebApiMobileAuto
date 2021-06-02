@@ -24,6 +24,7 @@ public class LoggedUserTests extends TestBase {
     void logOut() { new AccountMenuWidget().logOut(); }
 
     @Test
+    @JiraIssues({@JiraIssue("SX-W09")})
     @TM4J("SX-W5")
     @DisplayName("Test 09. UI: Create playlist")
     void createPlaylist() {
@@ -35,6 +36,7 @@ public class LoggedUserTests extends TestBase {
     }
 
     @Test
+    @JiraIssues({@JiraIssue("SX-W10")})
     @TM4J("SX-W6")
     @DisplayName("Test 10. UI: Find track")
     void findTrack() {

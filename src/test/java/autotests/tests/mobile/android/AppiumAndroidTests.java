@@ -22,7 +22,7 @@ import static io.qameta.allure.Allure.step;
 
 @Feature("Mobile tests")
 @Story("Android platform")
-@Tags({@Tag("mobile"),@Tag("mobile")})
+@Tags({@Tag("mobile"),@Tag("live")})
 @JiraIssues({@JiraIssue("XS-???")})
 @DisplayName("Testset for 'live' mobile and phone emulator on Android platform tests.")
 @Owner("xt4k")
@@ -58,7 +58,7 @@ public class AppiumAndroidTests extends TestBase {
     @Test
     @DisplayName("Test 13. Mobile: Search band in mobile application.")
     @TM4J("SX-M1")
-    //@JiraIssues({@JiraIssue("AUTO-201")})
+    @JiraIssues({@JiraIssue("SX-M13")})
     void searchBand() {
         step("Open application", () -> {
             $(AccessibilityId("Spotify")).click();
@@ -101,7 +101,7 @@ public class AppiumAndroidTests extends TestBase {
     @Test
     @DisplayName("Test 14. Mobile: Search composition in mobile application.")
     @TM4J("SX-M2")
-        // @JiraIssues({@JiraIssue("AUTO-203")})
+    @JiraIssues({@JiraIssue("SX-M14")})
     void searchComposition() {
         step("Open application", () -> {
             $(AccessibilityId("Spotify")).click();
@@ -138,7 +138,7 @@ public class AppiumAndroidTests extends TestBase {
     @Test
     @DisplayName("Test 15. Mobile: Check personal profile info.")
     @TM4J("SX-M3")
-        // @JiraIssues({@JiraIssue("AUTO-203")})
+    @JiraIssues({@JiraIssue("SX-M15")})
     void verifyMyInfo() {
         step("Open application", () -> {
             $(AccessibilityId("Spotify")).click();
