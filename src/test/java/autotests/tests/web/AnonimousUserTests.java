@@ -85,7 +85,6 @@ public class AnonimousUserTests extends TestBase {
                     .preceding(0).shouldHave(text("Listening on your phone or tablet is free, easy, and fun."))
                     .preceding(0).shouldHave(text("Bring your music to mobile and tablet, too."));
         });
-
     }
 
     @Tag("download")
