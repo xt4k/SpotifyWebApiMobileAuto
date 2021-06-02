@@ -1,4 +1,3 @@
-
 ![image](https://user-images.githubusercontent.com/38681283/120556173-d0631600-c404-11eb-894a-6c7ec19704ca.png)
 # SPOTIFY  Auto-test project.
 ##### Done in frame of diploma qualification test for AQA school QA.GURU
@@ -13,6 +12,9 @@
 #### - split into 3 set of tests: for Anonymous User, Login, Sign up, Registered User tests. Tests are logging only last screenshot, and video in normal workflow.
 #### Failed tests providing screenshotof failed steps additionally.
 #### Here it is video for passed autotest
+![findtrack](https://user-images.githubusercontent.com/38681283/120558512-43ba5700-c408-11eb-8ab4-5f9e48b952f8.gif)
+#### And last screenshot
+![image](https://user-images.githubusercontent.com/38681283/120558620-6c425100-c408-11eb-9722-df4200a705bb.png)
 
 
 
