@@ -45,7 +45,7 @@ public class DriverHelper {
 
     public static String getConsoleLogs(String sessionId) {
         String consoleLog;
-        if (getDriverConfig().mobileCloud().equals("browserstack"))
+        if ("browserstack".equals(getDriverConfig().mobileCloud()))
            consoleLog = getBSPublicLink(sessionId);
         else {
             String logType = ofNullable(getDriverConfig().browserLogType()).orElse(BROWSER);
