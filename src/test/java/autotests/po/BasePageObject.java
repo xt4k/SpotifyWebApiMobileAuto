@@ -33,7 +33,7 @@ public class BasePageObject {
         refresh();
     }
 
-    @Step("CAPCHA force to use only 'ui login'.")
+    @Step("Captha protection force to use only 'ui login'.")
     public void loginToAccount() {
         openHome();
         new TopWidget().doLogin()

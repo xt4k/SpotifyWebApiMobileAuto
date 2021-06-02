@@ -29,7 +29,7 @@ public class TestBase {
 
     @AfterEach
     public void addAttachments() {
-       String sessionId = getSessionId();
+        String sessionId = getSessionId();
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs(sessionId));

@@ -71,6 +71,8 @@ public class DriverHelper {
             chromeOptions.addArguments("--use-fake-ui-for-media-stream");
             chromeOptions.addArguments("--safebrowsing-disable-extension-blacklist");
             chromeOptions.setExperimentalOption("prefs", prefs);
+            chromeOptions.setExperimentalOption("credentials_enable_service", false);
+            chromeOptions.setExperimentalOption("profile.password_manager_enabled", false);
             capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         }
 

@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class AccountMenuWidget {
     SelenideElement seTopItem = $("span[data-testid]");
@@ -18,5 +19,6 @@ public class AccountMenuWidget {
     public void logOut() {
         seTopItem.parent().click();
         seSubMenuLogout.click();
+        sleep(500);
     }
 }
