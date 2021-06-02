@@ -1,6 +1,6 @@
 package autotests.helpers;
 
-import autotests.config.web.TestData;
+import autotests.config.testdata.TestData;
 import io.qameta.allure.Step;
 
 import static autotests.helpers.LogFilter.filtres;

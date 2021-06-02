@@ -1,6 +1,6 @@
 package autotests.po;
 
-import autotests.config.web.TestData;
+import autotests.config.testdata.TestData;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;

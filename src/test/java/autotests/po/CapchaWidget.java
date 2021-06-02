@@ -15,7 +15,7 @@ public class CapchaWidget extends BasePageObject {
         String frameName = seCapchaFrame.getAttribute("name");
         switchTo().innerFrame(frameName);
         seNotBot.click();
-        new CapchaTaskPopup().doTask();
+        new CaptchaTaskPopup().doTask();
     }
 
 }

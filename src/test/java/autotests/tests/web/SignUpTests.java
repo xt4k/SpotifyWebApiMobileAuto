@@ -1,7 +1,7 @@
 package autotests.tests.web;
 
 
-import autotests.config.web.TestData;
+import autotests.config.testdata.TestData;
 import autotests.po.AccountMenuWidget;
 import autotests.po.CapchaWidget;
 import autotests.po.SignupPage;
@@ -13,10 +13,9 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.SelenideDriver;
 import com.github.javafaker.Faker;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -36,12 +35,17 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 @Tags({@Tag("signup"), @Tag("spotify_testsuite")})
 @Story("Login tests with CAPTCHA WORKAROUND")
 @Owner("xt4k")
+@JiraIssues({@JiraIssue("XS-???")})
+@Layer("Web")
+@DisplayName("Testset for web UI shown automatic registration process against captcha service.")
 public class SignUpTests extends TestBase {
     CommonOperations co = new CommonOperations();
 
     @Tag("web")
     @Test
-    @DisplayName("Test 02.1. SignUp lambda (Failed test)")
+    @TM4J("SX-W8")
+    //@LabelAnnotations({@LabelAnnotation("Automatic"),@LabelAnnotation("Microphone"),("Failed test")})
+    @DisplayName("Test 12.1. UI: SignUp (lambda step, failed test)")
     void signUpSpotify() {
         Faker faker = new Faker();
 
@@ -146,7 +150,8 @@ public class SignUpTests extends TestBase {
     @Tag("web")
     @Disabled
     @Test
-    @DisplayName("Test 02.2 SignUp in step form (disabled test).")
+    @TM4J("SX-W9")
+    @DisplayName("Test 12.2 UI: SignUp (step form - disabled test).")
     void signUpSpotifyNoLambda() {
         Faker faker = new Faker();
 

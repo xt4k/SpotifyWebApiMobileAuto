@@ -11,7 +11,6 @@ public class PlaylistPage extends BasePageObject {
     SelenideElement sePlayListTitle = $("h1[dir='auto']");
     SelenideElement sePlayListText = $("h2 span[as='span']");
 
-
     @Step("Open 'Change playlist' form")
     public ListDetailsWidget change() {
         sePlayListTitle.click();

@@ -10,12 +10,10 @@ public class AccountMenuWidget {
     SelenideElement seTopItem = $("span[data-testid]");
     SelenideElement seSubMenuLogout = $("button[data-testid='user-widget-dropdown-logout']");
 
-
     @Step("Verify User Nickname `{nick} with actual.`")
     public void verifyNickName(String nick) {
         seTopItem.shouldHave(text(nick));
     }
-
 
     public void logOut() {
         seTopItem.parent().click();

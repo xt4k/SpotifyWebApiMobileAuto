@@ -1,4 +1,4 @@
-package autotests.config.web;
+package autotests.config.testdata;
 
 import org.aeonbits.owner.ConfigFactory;
 

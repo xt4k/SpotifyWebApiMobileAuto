@@ -3,9 +3,7 @@ package autotests.tests.web;
 import autotests.po.BasePageObject;
 import autotests.po.TopWidget;
 import autotests.tests.TestBase;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -25,10 +23,14 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 @Story("Anonymous User tests")
 @Tags({@Tag("web"), @Tag("spotify_testsuite")})
 @Owner("xt4k")
+@JiraIssues({@JiraIssue("XS-???")})
+@DisplayName("Testset for web UI tests by anonymous user.")
+@Layer("Web")
 public class AnonimousUserTests extends TestBase {
 
     @Test
-    @DisplayName("Test 02. Check Premium Plans")
+    @TM4J("SX-W1")
+    @DisplayName("Test 05. UI: Check Premium Plans")
     void verifyPlansInfo() {
         new BasePageObject().openHome();
         new TopWidget().premium()
@@ -38,7 +40,8 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
-    @DisplayName("Test 03. Verify Download Windows Application button")
+    @TM4J("SX-W2")
+    @DisplayName("Test 06. UI: Verify Download Windows Application button")
     void verifyDownloadWinButton() {
         step("Open Homepage", () -> {
             open(baseUrl + "download/windows");
@@ -60,7 +63,8 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
-    @DisplayName("Test 04. Verify Download Apple Application button")
+    @TM4J("SX-W3")
+    @DisplayName("Test 07. UI: Verify Download Apple Application button")
     void verifyDownloadAppleButton() {
         step("Open Homepage", () -> {
             open(baseUrl + "download/windows");
@@ -86,7 +90,8 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
-    @DisplayName("Test 05. Verify 'GET IT ON Google Play' button")
+    @TM4J("SX-W4")
+    @DisplayName("Test 08. UI: Verify 'GET IT ON Google Play' button.")
     void verifyDownloadGoogleButton() {
         step("Open Homepage", () -> {
             open(baseUrl + "download/windows");
@@ -103,7 +108,5 @@ public class AnonimousUserTests extends TestBase {
                     .parent()
                     .shouldHave(attribute("data-testid", "google-store-badge"));
         });
-
     }
-
 }

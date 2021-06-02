@@ -28,8 +28,6 @@ public class MobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
-        //final DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class, System.getProperties());
-
         capabilities.setCapability("server", getDriverConfig().getServer());
         capabilities.setCapability("locale", getDriverConfig().getLocale());
         capabilities.setCapability("language", getDriverConfig().getLanguage());
@@ -39,10 +37,9 @@ public class MobileDriver implements WebDriverProvider {
         capabilities.setCapability(VERSION, getDriverConfig().getOsVersion());
         capabilities.setCapability(AUTOMATION_NAME, getDriverConfig().getAutoName());
 
-        if (getDriverConfig().mobileCloud().equals("browserstack")) {
-            step("bs");
-            System.out.println("browserstack.user " + getDriverConfig().getBsUser());
-            System.out.println("browserstack.key " + getDriverConfig().getBsAccessKey());
+        if (getDriverConfig().mobileCloud().equals("browserstack")) {//step("bs");
+            //System.out.println("browserstack.user " + getDriverConfig().getBsUser());
+            //System.out.println("browserstack.key " + getDriverConfig().getBsAccessKey());
 
             capabilities.setCapability("browserstack.user", getDriverConfig().getBsUser());
             capabilities.setCapability("browserstack.key", getDriverConfig().getBsAccessKey());

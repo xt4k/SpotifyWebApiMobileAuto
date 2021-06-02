@@ -1,6 +1,6 @@
 package autotests.tests.api;
 
-import autotests.config.web.TestData;
+import autotests.config.testdata.TestData;
 import autotests.pojo.api.search.item.AlbumItem;
 import autotests.pojo.api.search.item.Form;
 import autotests.tests.TestBase;
@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
@@ -25,6 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Feature("Api tests")
 @Tags({@Tag("api"), @Tag("spotify_testsuite")})
 @Owner("xt4k")
+@Layer("API")
 class ApiTests extends TestBase {
     private static SpecClient client = new SpecClient();
     protected ObjectMapper mapper = new ObjectMapper();
@@ -33,7 +35,7 @@ class ApiTests extends TestBase {
 
     @Story("Search")
     @Test
-    @DisplayName("Api test 01. Search Band's Album.")
+    @DisplayName("Test 01. Api: Search Band's Album.")
     void searchAlbumForBand() {
         AlbumItem ai = new AlbumItem("Nirvana", "Bleach", "album", 13);
         form = new Form(ai, "US", 10, 0);
@@ -63,7 +65,7 @@ class ApiTests extends TestBase {
 
     @Story("Security")
     @Test
-    @DisplayName("Api test 02. Check personal info (negative).")
+    @DisplayName("Test 02. API: Check personal info (negative).")
     void getProfileInfo() {
         step("Send request for own personal info.", () -> {
             response = client.getInfo("/me", 401);
@@ -77,7 +79,7 @@ class ApiTests extends TestBase {
 
     @Story("Read")
     @Test
-    @DisplayName("Api test 03. Check user display name.")
+    @DisplayName("Test 03. API: Check user display name.")
     void getUserProfileInfo() {
         step("Send request for user personal info.", () -> {
             String tail = "/users/" + TestData.getUserId();
@@ -92,7 +94,7 @@ class ApiTests extends TestBase {
 
     @Story("Read")
     @Test
-    @DisplayName("Api test 04. Check if UA market available.")
+    @DisplayName("TEst 04. API: Check if UA market available.")
     void checkUaMarket() {
         step("Send request about markets.", () -> {
             response = client.getInfo("/markets", 200);

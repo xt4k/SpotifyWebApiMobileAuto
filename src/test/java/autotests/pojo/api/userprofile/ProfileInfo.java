@@ -1,6 +1,6 @@
 package autotests.pojo.api.userprofile;
 
-import autotests.config.web.TestData;
+import autotests.config.testdata.TestData;
 import autotests.pojo.api.ExplicitContent;
 import autotests.pojo.api.ExternalUrls;
 import autotests.pojo.api.ImagesItem;

@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.util.HashMap;
 import java.util.Map;
 
+import static autotests.helpers.BrowserstackHelper.getBSPublicLink;
+import static autotests.tests.TestBase.SESSION_ID;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.getWebDriverLogs;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -41,9 +43,15 @@ public class DriverHelper {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");
     }
 
-    public static String getConsoleLogs() {
-        String logType = ofNullable(getDriverConfig().browserLogType()).orElse(BROWSER);
-        return join("\n", getWebDriverLogs(logType));
+    public static String getConsoleLogs(String sessionId) {
+        String consoleLog;
+        if (getDriverConfig().mobileCloud().equals("browserstack"))
+           consoleLog = getBSPublicLink(sessionId);
+        else {
+            String logType = ofNullable(getDriverConfig().browserLogType()).orElse(BROWSER);
+            consoleLog = join("\n", getWebDriverLogs(logType));
+        }
+        return consoleLog;
     }
 
     @Step("WebDriver configuring")

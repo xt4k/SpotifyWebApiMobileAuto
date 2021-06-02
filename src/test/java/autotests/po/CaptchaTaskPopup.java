@@ -5,8 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class CapchaTaskPopup extends BasePageObject {
-
+public class CaptchaTaskPopup extends BasePageObject {
     SelenideElement seAudio = $("#recaptcha-audio-button");
     SelenideElement sePlay = $("button[aria-labelledby='audio-instructions rc-response-label']");
     SelenideElement seAudioResponse = $("#audio-response");

@@ -13,19 +13,16 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class TranslatorWidget extends BasePageObject {
 
-    SelenideElement seMicro = $("#ow47");
+    //SelenideElement seMicro = $("#ow47");
     SelenideElement seEngText = $("textarea[rows='1']");
 
-
     public void prepare() {
-
         browser = getDriverConfig().webBrowser();
         browserVersion = getDriverConfig().webBrowserVersion();
         browserSize = getDriverConfig().webBrowserSize();
         timeout = 10000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--use-fake-ui-for-media-stream");
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);

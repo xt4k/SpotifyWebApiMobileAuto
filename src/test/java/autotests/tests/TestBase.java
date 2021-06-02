@@ -1,6 +1,6 @@
 package autotests.tests;
 
-import autotests.config.web.TestData;
+import autotests.config.testdata.TestData;
 import autotests.helpers.Auth;
 import autotests.po.BasePageObject;
 import com.codeborne.selenide.Configuration;
@@ -18,6 +18,7 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 public class TestBase {
     public static BasePageObject po = new BasePageObject();
     public static String API_TOKEN;
+    public static  String SESSION_ID;
 
     @BeforeAll
     static void setUp() {
@@ -29,11 +30,10 @@ public class TestBase {
 
     @AfterEach
     public void addAttachments() {
-        String sessionId = getSessionId();
-
+       String sessionId = getSessionId();
         attachScreenshot("Last screenshot");
         attachPageSource();
-        attachAsText("Browser console logs", getConsoleLogs());
+        attachAsText("Browser console logs", getConsoleLogs(sessionId));
 
         closeWebDriver();
 

@@ -16,8 +16,7 @@ public class BrowserstackHelper {
                 .extract()
                 .response()
                 .path("automation_session.video_url");
-
-        System.out.println("video_url: " + video_url);
+        //System.out.println("video_url: " + video_url);
         return video_url;
     }
 
@@ -31,9 +30,8 @@ public class BrowserstackHelper {
                 .extract()
                 .response()
                 .path("automation_session.public_url");
-
-        System.out.println("bs_public_url: " + publicUrl);
-        System.out.println("bs_build_url: " + publicUrl.split("/sessions/")[0]);
+        //System.out.println("bs_public_url: " + publicUrl);
+        //System.out.println("bs_build_url: " + publicUrl.split("/sessions/")[0]);
         return publicUrl;
     }
 }
