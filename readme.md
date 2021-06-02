@@ -1,4 +1,14 @@
+# Spotify Autotesting project.
+# done in frame of diploma qualification test for AQA shcool QA.GURU
+
+# Project scope:
+## API tests
+## UI tests
+## Mobile applications tests
+
+
 Here is my Diploma project.
+
 
 I have selected Spotify, according to idea, that it should follow to 3 diretions :
 
