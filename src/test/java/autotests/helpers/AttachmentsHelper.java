@@ -13,11 +13,19 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Base64;
+import java.util.Date;
 
+import static autotests.drivers.DriverHelper.getDriverConfig;
 import static autotests.helpers.BrowserstackHelper.getBrowserstackVideoUrl;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.addAttachment;
+import static java.lang.String.format;
 
 
 public class AttachmentsHelper {
@@ -57,6 +65,24 @@ public class AttachmentsHelper {
             addAttachment("Video", "video/mp4", videoInputStream, "mp4");
         }
     }
+
+    public static void saveVideoLocally(String sessionId, String base64output) {
+        SimpleDateFormat format = new SimpleDateFormat("ddMMyyyy_hh-mm-ss");
+        Date date = new Date();
+        String dateStr = format.format(date);
+        try {
+            byte[] data = Base64.getDecoder().decode(base64output);
+            String destinationPath = format("%s/ScreenRecord_%s.mp4", getDriverConfig().getMobileVideoStorage(), dateStr);
+            Path path = Paths.get(destinationPath);
+            Files.write(path, data);
+            addAttachment("Video", "video/mp4", destinationPath, "mp4");
+        } catch (IOException ex) {
+            LOG.warn("[ALLURE VIDEO RECORDS ERROR] Cant save android video, {}", sessionId);
+            ex.printStackTrace();
+        }
+
+    }
+
 
     public static URL getVideoUrl(String sessionId) {
         String videoUrl = DriverHelper.getVideoUrl() + sessionId + ".mp4";

@@ -24,6 +24,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Tags({@Tag("api"), @Tag("spotify_testsuite")})
 @Owner("xt4k")
 @Layer("API")
+@JiraIssues({@JiraIssue("AUTO-226")})
 class ApiTests extends TestBase {
     private static SpecClient client = new SpecClient();
     protected ObjectMapper mapper = new ObjectMapper();
@@ -31,7 +32,7 @@ class ApiTests extends TestBase {
     private Response response;
 
     @Story("Search")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-A02")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
     @DisplayName("Test 01. Api: Search Band's Album.")
     void searchAlbumForBand() {
@@ -62,7 +63,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Security")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-A02")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
     @DisplayName("Test 02. API: Check personal info (negative).")
     void getProfileInfo() {
@@ -77,7 +78,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Read")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-A03")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
     @DisplayName("Test 03. API: Check user display name.")
     void getUserProfileInfo() {
@@ -93,7 +94,7 @@ class ApiTests extends TestBase {
     }
 
     @Story("Read")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-A04")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @Test
     @DisplayName("TEst 04. API: Check if UA market available.")
     void checkUaMarket() {

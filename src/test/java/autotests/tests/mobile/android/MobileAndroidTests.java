@@ -1,67 +1,36 @@
 package autotests.tests.mobile.android;
 
 import autotests.config.testdata.TestData;
-import autotests.drivers.MobileDriver;
-import autotests.tests.TestBase;
 import io.appium.java_client.MobileBy;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 
-import static autotests.drivers.DriverHelper.getConsoleLogs;
-import static autotests.drivers.DriverHelper.getSessionId;
-import static autotests.helpers.AttachmentsHelper.*;
+import static autotests.helpers.AttachmentsHelper.attachScreenshot;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
-import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static io.appium.java_client.MobileBy.AccessibilityId;
 import static io.qameta.allure.Allure.step;
 
 @Feature("Mobile tests")
 @Story("Android platform")
-@Tags({@Tag("mobile"),@Tag("live")})
+@Tags({@Tag("mobile"), @Tag("live")})
 @DisplayName("Testset for 'live' mobile and phone emulator on Android platform tests.")
 @Owner("xt4k")
 @Layer("Mobile")
-public class AppiumAndroidTests extends TestBase {
-
-    @BeforeAll
-    public static void setUp() {
-        step("mobile");
-        addListener("AllureSelenide", new AllureSelenide());
-        browser = MobileDriver.class.getName();
-        startMaximized = false;
-        browserSize = null;
-        timeout = 12000;
-    }
-
-    @BeforeEach
-    void openUp() {
-        open();
-    }
-
-    @AfterEach
-    public void addAttachments() {
-        String sessionId = getSessionId();
-        attachScreenshot("Last screenshot");
-        attachPageSource();
-        attachAsText("Get logs", getConsoleLogs(sessionId));
-
-        closeWebDriver();
-        attachVideo(sessionId);
-    }
+@JiraIssues({@JiraIssue("AUTO-226")})
+public class MobileAndroidTests extends MobileTestBase {
 
     @Test
     @DisplayName("Test 13. Mobile: Search band in mobile application.")
     @TM4J("SX-M1")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-M13")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     void searchBand() {
         step("Open application", () -> {
             $(AccessibilityId("Spotify")).click();
-            attachScreenshot("Open application");
         });
 
         step("Search band", () -> {
@@ -100,11 +69,10 @@ public class AppiumAndroidTests extends TestBase {
     @Test
     @DisplayName("Test 14. Mobile: Search composition in mobile application.")
     @TM4J("SX-M2")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-M14")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     void searchComposition() {
         step("Open application", () -> {
             $(AccessibilityId("Spotify")).click();
-            attachScreenshot("Open application");
         });
 
         step("Search composition", () -> {
@@ -137,11 +105,10 @@ public class AppiumAndroidTests extends TestBase {
     @Test
     @DisplayName("Test 15. Mobile: Check personal profile info.")
     @TM4J("SX-M3")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-M15")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     void verifyMyInfo() {
         step("Open application", () -> {
             $(AccessibilityId("Spotify")).click();
-            attachScreenshot("Open application");
         });
 
         step("Navigate to profile", () -> {

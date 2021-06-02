@@ -12,6 +12,7 @@ import org.junit.jupiter.api.*;
 @Tags({@Tag("web"), @Tag("spotify_testsuite"), @Tag("logged")})
 @Owner("xt4k")
 @Layer("Web")
+@JiraIssues({@JiraIssue("AUTO-226")})
 @DisplayName("Testset for web UI tests by registered user.")
 public class LoggedUserTests extends TestBase {
     Playlist playlist = new Playlist();
@@ -23,7 +24,7 @@ public class LoggedUserTests extends TestBase {
     void logOut() { new AccountMenuWidget().logOut(); }
 
     @Test
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W09")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @TM4J("SX-W5")
     @DisplayName("Test 09. UI: Create playlist")
     void createPlaylist() {
@@ -35,7 +36,7 @@ public class LoggedUserTests extends TestBase {
     }
 
     @Test
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W10")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @TM4J("SX-W6")
     @DisplayName("Test 10. UI: Find track")
     void findTrack() {

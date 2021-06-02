@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static autotests.helpers.BrowserstackHelper.getBSPublicLink;
-import static autotests.tests.TestBase.SESSION_ID;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.getWebDriverLogs;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;

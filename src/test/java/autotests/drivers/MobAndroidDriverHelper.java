@@ -3,20 +3,31 @@ package autotests.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.android.AndroidStartScreenRecordingOptions;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
-import static autotests.drivers.DriverHelper.getDriverConfig;
+import static autotests.drivers.DriverHelper.*;
+import static autotests.helpers.AttachmentsHelper.*;
+import static com.codeborne.selenide.Configuration.*;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static io.appium.java_client.remote.MobileCapabilityType.*;
-import static io.qameta.allure.Allure.step;
 
 
-public class MobileDriver implements WebDriverProvider {
+public class MobAndroidDriverHelper implements WebDriverProvider {
     WebDriver customDriver;
+
 
     public static URL getUrl(DesiredCapabilities dc) {
         try {
@@ -48,20 +59,15 @@ public class MobileDriver implements WebDriverProvider {
             capabilities.setCapability("project", getDriverConfig().getProject());
             capabilities.setCapability("build", getDriverConfig().getBuild());
             capabilities.setCapability("name", getDriverConfig().getTestsetName());
-            capabilities.setCapability("browserstack.debug", getDriverConfig().getBsDebug());
+            capabilities.setCapability("browserstack.debug", getDriverConfig().getBsDebug());}
 
-            if (getDriverConfig().getDeviceName().contains("iPhone"))
-                customDriver = new IOSDriver(getUrl(capabilities), capabilities);
-            else
-                customDriver = new AndroidDriver<>(getUrl(capabilities), capabilities);
-        }
         else if (getDriverConfig().mobileCloud().contains("emulator")) {
-            capabilities.setCapability(NEW_COMMAND_TIMEOUT, 20);
-            capabilities.setCapability(FULL_RESET, false);
-
+                capabilities.setCapability(NEW_COMMAND_TIMEOUT, 20);
+                capabilities.setCapability(FULL_RESET, false);
+            capabilities.setCapability("local.video.storage",getDriverConfig().getMobileVideoStorage() );
+            }
             customDriver = new AndroidDriver(getUrl(capabilities), capabilities);
-        }
+
         return customDriver;
     }
-
 }

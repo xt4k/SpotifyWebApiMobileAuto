@@ -18,7 +18,6 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 public class TestBase {
     public static BasePageObject po = new BasePageObject();
     public static String API_TOKEN;
-    public static  String SESSION_ID;
 
     @BeforeAll
     static void setUp() {

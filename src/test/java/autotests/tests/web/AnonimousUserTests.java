@@ -23,13 +23,14 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 @Story("Anonymous User tests")
 @Tags({@Tag("web"), @Tag("spotify_testsuite")})
 @Owner("xt4k")
+@JiraIssues({@JiraIssue("AUTO-226")})
 @DisplayName("Testset for web UI tests by anonymous user.")
 @Layer("Web")
 public class AnonimousUserTests extends TestBase {
 
     @Test
     @TM4J("SX-W1")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W05")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @DisplayName("Test 05. UI: Check Premium Plans")
     void verifyPlansInfo() {
         new BasePageObject().openHome();
@@ -40,7 +41,7 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W06")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @TM4J("SX-W2")
     @DisplayName("Test 06. UI: Verify Download Windows Application button")
     void verifyDownloadWinButton() {
@@ -65,7 +66,7 @@ public class AnonimousUserTests extends TestBase {
     @Tag("download")
     @Test
     @TM4J("SX-W3")
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W07")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @DisplayName("Test 07. UI: Verify Download Apple Application button")
     void verifyDownloadAppleButton() {
         step("Open Homepage", () -> {
@@ -92,7 +93,7 @@ public class AnonimousUserTests extends TestBase {
 
     @Tag("download")
     @Test
-    @JiraIssues({@JiraIssue("AUTO-226"),@JiraIssue("SX-W08")})
+    @JiraIssues({@JiraIssue("AUTO-226")})
     @TM4J("SX-W4")
     @DisplayName("Test 08. UI: Verify 'GET IT ON Google Play' button.")
     void verifyDownloadGoogleButton() {

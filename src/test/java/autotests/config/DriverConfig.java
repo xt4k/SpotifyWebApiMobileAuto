@@ -70,9 +70,11 @@ public interface DriverConfig extends Config {
     @Key("app.activity")
     String getAppActivity();
 
+    @Key("mobile.video.storage")
+    String getMobileVideoStorage();
+
     @Key("absolute.path")
     String getAbsPath();
-
 
     @Key("app")
         // @DefaultValue("bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c")
