@@ -17,8 +17,8 @@ import org.junit.jupiter.api.*;
 public class LoggedUserTests extends TestBase {
     Playlist playlist = new Playlist();
 
-    @BeforeEach
-    void loginAccount() { po.loginToAccount(); }
+  /*  @BeforeEach
+    void loginAccount() { po.loginToAccount(); }*/
 
     @AfterEach
     void logOut() { new AccountMenuWidget().logOut(); }
@@ -28,6 +28,7 @@ public class LoggedUserTests extends TestBase {
     @TM4J("2947")
     @DisplayName("Test 11. UI: Create playlist")
     void createPlaylist() {
+        po.loginToAccount();
         new MainMenuWidget().createPlayList()
                 .change()
                 .setDetails(playlist)
@@ -40,6 +41,7 @@ public class LoggedUserTests extends TestBase {
     @TM4J("2948")
     @DisplayName("Test 12. UI: Find track")
     void findTrack() {
+        po.loginToAccount();
         new MainMenuWidget().openSearch()
                 .search(playlist.getGenre())
                 .verifyTrackInfo(playlist.getGenre());

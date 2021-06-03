@@ -11,7 +11,7 @@ public class ListDetailsWidget extends BasePageObject {
     SelenideElement sePlayListTextField = $("textarea[data-testid='playlist-edit-details-description-input']");
     SelenideElement sePlayListSaveChanges = $("button[data-testid='playlist-edit-details-save-button']");
 
-    @Step("Set playlist's details: {playlist}")
+    @Step("Set playlist's details.")
     public ListDetailsWidget setDetails(Playlist playlist) {
         setSeValue(sePlayListNameField, playlist.getName());
         setSeValue(sePlayListTextField, playlist.getDescription());

@@ -17,7 +17,7 @@ public class PlaylistPage extends BasePageObject {
         return new ListDetailsWidget();
     }
 
-    @Step("Verify that edited playlist has entered info:{playlist}")
+    @Step("Verify that edited playlist has entered info.")
     public void verifyPlayListInfo(Playlist playlist) {
         sePlayListTitle.shouldHave(text(playlist.getName()));
         sePlayListText.shouldHave(text(playlist.getDescription()));

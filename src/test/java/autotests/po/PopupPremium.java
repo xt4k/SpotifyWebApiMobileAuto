@@ -13,6 +13,7 @@ public class PopupPremium extends BasePageObject {
     public void closeIfExistPremiumPopup() {
         if (sePremiumPopup.isDisplayed())
             sePremiumPopup.$$("button").last().click();
-        insertCookie();//attachScreenshot("closed");
+        insertCookie();
+       // attachScreenshot("Premium popup closed");
     }
 }

@@ -3,6 +3,7 @@ package autotests.po;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static autotests.helpers.AttachmentsHelper.attachScreenshot;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TopWidget extends BasePageObject {
@@ -25,6 +26,7 @@ public class TopWidget extends BasePageObject {
     @Step("Navigate to Login Page")
     public LoginPage doLogin() {
         seBtnLogIn.click();
+       // attachScreenshot("navigated");
         return new LoginPage();
     }
 

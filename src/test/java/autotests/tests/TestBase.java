@@ -23,6 +23,7 @@ public class TestBase {
     static void setUp() {
         configureDriver();
         Configuration.baseUrl = TestData.getWebUrl();
+        Configuration.startMaximized=true;
         API_TOKEN = new Auth().getToken();
         RestAssured.baseURI = TestData.getApiUrl();
     }
