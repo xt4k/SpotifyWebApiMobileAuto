@@ -14,8 +14,9 @@
 * [Last screenshot for live and emulated phones accordingly](#last-screenshot-for-live-and-emulated-phones-accordingly)
 
 ![JenkinsJob](https://jenkins.autotests.cloud/job/spotify_auto_diploma)
-Last screenshot for live and emulated phones accordingly
-(https://jenkins.autotests.cloud/job/spotify_auto_diploma/)
+
+
+-----------
 
 
 * [Web UI autotest video](#web-ui-autotest-video)
