@@ -8,7 +8,7 @@
 * [General info](#general-info)
 * [Technology stack](#technology-stack)
 * [Test Levels](#test-levels)
-* [API](#:white_check_mark: API)
+* [API](#api)
 ## General info
 ### :arrow_forward: Central node of project - Jenkins CI integrated with TMS Allure TestOps
 ## Jenkins run autotests on Selenoid server and transfer test reports data into Allure TestOps, that integrated with Jira.
