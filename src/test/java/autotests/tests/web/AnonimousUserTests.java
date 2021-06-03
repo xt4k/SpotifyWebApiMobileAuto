@@ -108,8 +108,9 @@ public class AnonimousUserTests extends TestBase {
         });
     }
 
+    @Tags({@Tag("failed"), @Tag("advertisement")})
     @Test
-    @TM4J("SX-W5")
+    @TM4J("4444")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @DisplayName("Test 09. UI: Check Extended Premium Period Conditions.")
     void verifyExtendedPremiumConditionInfoMistaken() {
@@ -119,8 +120,9 @@ public class AnonimousUserTests extends TestBase {
                 $("div>h1").shouldHave(text(TestData.getPreferentialPeriodWrong())));
     }
 
+    @Tags({@Tag("passed"), @Tag("advertisement")})
     @Test
-    @TM4J("SX-W1")
+    @TM4J("4455")
     @JiraIssues({@JiraIssue("AUTO-226")})
     @DisplayName("Test 10. UI: Check Extended Premium Period Conditions.")
     void verifyExtendedPremiumConditionInfo() {
