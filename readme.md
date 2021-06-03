@@ -13,6 +13,7 @@
 * [Spotify mobile application autotests video](#spotify-mobile-application-autotests-video)
 * [Last screenshot for live and emulated phones accordingly](#last-screenshot-for-live-and-emulated-phones-accordingly)
 
+![tekst alternatywny](ścieżka/do/pliku)
 Last screenshot for live and emulated phones accordingly
 
 * [Web UI autotest video](#web-ui-autotest-video)
