@@ -1,6 +1,7 @@
 ![image](https://user-images.githubusercontent.com/38681283/120556173-d0631600-c404-11eb-894a-6c7ec19704ca.png)
 # SPOTIFY  Auto-test project.
 ##### Done in frame of diploma qualification test for AQA school QA.GURU
+####### *(If Spotify team doesn't agree with their logo presnece on - please ask me and I will delete it) 
 ## Technology stack
 | GitHub | IDEA | Java | Junit5 | Gradle | Selenide | Selenoid | Allure | Jenkins |
 |:-----:|:-----:|:----:|:------:|:------:|:--------:|:--------:|:------------:|:-------:|
