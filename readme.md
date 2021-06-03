@@ -10,7 +10,7 @@
 * [Test Levels](#test-levels)
 * [Typical API messages](#typical-api-messages)
 * [Web UI autotest video](#web-ui-autotest-video)
-* [Spotify mobile application autotest video](#spotify-mobile-application-autotest-video)
+* [Spotify mobile application autotests video](#spotify-mobile-application-autotests-video)
 * [Last screenshot for live and emulated phones accordingly](#last-screenshoot-for-live-and-emulated-phones-accordingly)
 
 Last screenshot for live and emulated phones accordingly
@@ -48,7 +48,7 @@ Last screenshot for live and emulated phones accordingly
 ## :white_check_mark: Mobile application           
 #### - testset designed for Android devices - "live" and emulated phones. it verifies common functionality like search band, composition, personal information. 
 #### Tests are logging last screenshot, screenshot vor assrtional steps and storing test's workflow video (stored locally).
-## Spotify mobile application autotest video
+## Spotify mobile application autotests video
 ![ScreenRecord_02062021_06-43-14](https://user-images.githubusercontent.com/38681283/120558842-bcb9ae80-c408-11eb-93a1-0458a09df578.gif)
 ![ScreenRecord_02062021_06-44-12](https://user-images.githubusercontent.com/38681283/120558846-bdeadb80-c408-11eb-99ae-61b1af11c2b3.gif)
 ## Last screenshot for live and emulated phones accordingly
