@@ -5,8 +5,12 @@
 ###### *If Spotify team doesn't agree with their logo presence here - please let me know and I will delete it.
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
-* [Setup](#setup)
+* [Technology stack](#technology-stack)
+* [Test Levels](#test-levels)
+
+### :arrow_forward: Central node of project - Jenkins CI integrated with TMS Allure TestOps
+## Jenkins run autotests on Selenoid server and transfer test reports data into Allure TestOps, that integrated with Jira.
+## Also Jenkins send telegram chat and e-mail messages about job result.
 
 ## Technology stack
 | GitHub | IDEA | Java | Junit5 | Gradle | Selenide | Selenoid | Allure | Jenkins |
@@ -17,11 +21,8 @@
 |:-------------:|:--------:|:------:|:------------:|:--------------:|:---------:|:------:|
 <img src="https://user-images.githubusercontent.com/38681283/120563090-72d4c680-c410-11eb-8a3f-2309be0a818f.png" width="40" height="40"> |<img src="https://user-images.githubusercontent.com/38681283/120566097-335da880-c417-11eb-9e7b-248f6d5d4370.png" width="50" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120566010-eed20d00-c416-11eb-940d-56923ceff1bf.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120563529-79b00900-c411-11eb-8ab7-d5caf8b11ac1.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120565685-4ae86180-c416-11eb-9e62-42edc0e07e14.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120563229-bf200680-c410-11eb-91a6-d54243d0cda6.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120566160-54be9480-c417-11eb-86b7-4445fcdc8183.png" width="40" height="40"> |
 
-### :arrow_forward: As central node of project - Jenkins CI and test management system Allure TestOps
-## Jenkins run autotests on Selenoid server and transfer test reports data into Allure TestOps, that integrated with Jira.
-## Also Jenkins send telegram chat and e-mail messages about job result.
 
-# Test Levels:
+## Test Levels:
 ## :white_check_mark: API      
 #### - very fast tests that request information about artists, album, market, spotify user and verify it. Tests are logging API requests, responses, expected and actual results.
 ### Typically it looks like this
