@@ -56,14 +56,16 @@
 ![image](https://user-images.githubusercontent.com/38681283/120642012-08a63b00-c47d-11eb-9687-b463348d2c78.png)
 ## Allure report in Jenkins
 ![image](https://user-images.githubusercontent.com/38681283/120564585-ed531580-c413-11eb-8515-40979492ec24.png)
-## [Spotify Allure_TestOps][2]
+# :arrow_forward: [Spotify Allure_TestOps][2]
 ## AllureTestOps screenshots
 ![image](https://user-images.githubusercontent.com/38681283/120640087-c0861900-c47a-11eb-891e-34382f8df197.png)
 ![image](https://user-images.githubusercontent.com/38681283/120640222-e0b5d800-c47a-11eb-9fc9-15d4bce0180c.png)
 ![image](https://user-images.githubusercontent.com/38681283/120640315-00e59700-c47b-11eb-81e5-b46814df3ea2.png)
 ![image](https://user-images.githubusercontent.com/38681283/120640404-1eb2fc00-c47b-11eb-8630-5e78fb6e5c92.png)
 ![image](https://user-images.githubusercontent.com/38681283/120641333-2921c580-c47c-11eb-9b68-25280b4f8e6e.png)
-### Jira Integrated with Spotify Allure_TestOps project (https://jira.autotests.cloud/projects/AUTO/issues/AUTO-226)
+# :arrow_forward: [Jira issue that integrated with Spotify Allure_TestOps project][3]
+## Jira issue screenshot
+#### (shown Allure TestOps testrun and testcases statuses)
 ![image](https://user-images.githubusercontent.com/38681283/120621762-de498300-c466-11eb-9e71-f0a5001d446e.png)
 ### E-mail integrated with Jenkins - Short report summary image sent to selected mailbox
 ![image](https://user-images.githubusercontent.com/38681283/120648070-ea900900-c483-11eb-94d0-9c32369078ce.png)
@@ -74,3 +76,4 @@
 
 [1]: https://jenkins.autotests.cloud/job/spotify_auto_diploma
 [2]: https://allure.autotests.cloud/project/204/launches
+[3]: https://jira.autotests.cloud/projects/AUTO/issues/AUTO-226
