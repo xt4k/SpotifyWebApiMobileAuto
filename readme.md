@@ -11,7 +11,7 @@
 * [Typical API messages](#typical-api-messages)
 * [Web UI autotest video](#web-ui-autotest-video)
 * [Spotify mobile application autotest video](#spotify-mobile-application-video)
-* [Last screenshot for 'live' phone and emulated phone accordingly](#last-screenshoot-for-live-and-emulated-phone-accordingly)
+* [Last screenshot for live phone and emulated phone accordingly](#last-screenshoot-for-live-and-emulated-phone-accordingly)
 
 
 * [Web UI autotest video](#web-ui-autotest-video)
