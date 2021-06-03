@@ -16,7 +16,7 @@
 * [Allure report in Jenkins](#allure-report-in-jenkins)
 * [AllureTestOps screenshots](#alluretestops-screenshots)
 * [Jira issue screenshot](#jira-issue-screenshot)
-* [E-mail screenshot](#e-mail-screenshot)
+* [Mail screenshot](#mail-screenshot)
 * [Chat message](#chat-message)
 
 
@@ -71,7 +71,7 @@
 #### (shown Allure TestOps launches and testcases statuses)
 ![image](https://user-images.githubusercontent.com/38681283/120621762-de498300-c466-11eb-9e71-f0a5001d446e.png)
 ## :arrow_forward: E-mail integration
-## E-mail screenshot
+## Mail screenshot
 #### Jenkins sends emails with short report summary image to selected mailbox
 ![image](https://user-images.githubusercontent.com/38681283/120648070-ea900900-c483-11eb-94d0-9c32369078ce.png)
 ## :arrow_forward: Telegram integration
