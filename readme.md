@@ -11,8 +11,9 @@
 * [Typical API messages](#typical-api-messages)
 * [Web UI autotest video](#web-ui-autotest-video)
 * [Spotify mobile application autotest video](#spotify-mobile-application-video)
-* [Last screenshot for live phone and emulated phone accordingly](#last-screenshoot-for-live-and-emulated-phone-accordingly)
+* [Last screenshot for live and emulated phones accordingly](#last-screenshoot-for-live-and-emulated-phones-accordingly)
 
+Last screenshot for live and emulated phones accordingly
 
 * [Web UI autotest video](#web-ui-autotest-video)
 * [Spotify mobile application autotest video](#spotify-mobile-application-video)
@@ -50,7 +51,7 @@
 ## Spotify mobile application autotest video
 ![ScreenRecord_02062021_06-43-14](https://user-images.githubusercontent.com/38681283/120558842-bcb9ae80-c408-11eb-93a1-0458a09df578.gif)
 ![ScreenRecord_02062021_06-44-12](https://user-images.githubusercontent.com/38681283/120558846-bdeadb80-c408-11eb-99ae-61b1af11c2b3.gif)
-## Last screenshot for 'live' phone and emulated phone accordingly
+## Last screenshot for live and emulated phones accordingly
 ![image](https://user-images.githubusercontent.com/38681283/120560727-eaecbd80-c40b-11eb-98c8-d8e4dfc5a6de.png)
 
 # :arrow_forward: Jenkins job (https://jenkins.autotests.cloud/job/spotify_auto_diploma/)
