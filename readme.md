@@ -3,7 +3,7 @@
 ## Auto-test project
 ##### Done in frame of diploma qualification test for AQA school QA.GURU
 ###### *If Spotify team doesn't agree with their logo presence here - please let me know and I will delete it.
-## Table of contents
+## CONTENT
 * [SPOTIFY](#spotify)
 * [General info](#general-info)
 * [Technology stack](#technology-stack)
