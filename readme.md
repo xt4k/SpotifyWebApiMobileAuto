@@ -15,6 +15,9 @@
 * [Spotify job screenshot](#spotify-job-screenshot)
 * [Allure report in Jenkins](#allure-report-in-jenkins)
 * [AllureTestOps screenshots](#alluretestops-screenshots)
+* [Jira issue screenshot](#jira-issue-screenshot)
+* [E-mail integration](#e-mail-integration)
+* [Telegram integration](#telegram-integration)
 
 
 ## General info
@@ -67,9 +70,11 @@
 ## Jira issue screenshot
 #### (shown Allure TestOps testrun and testcases statuses)
 ![image](https://user-images.githubusercontent.com/38681283/120621762-de498300-c466-11eb-9e71-f0a5001d446e.png)
-### E-mail integrated with Jenkins - Short report summary image sent to selected mailbox
+## E-mail integration
+#### Jenkins sends emails with short report summary image to selected mailbox
 ![image](https://user-images.githubusercontent.com/38681283/120648070-ea900900-c483-11eb-94d0-9c32369078ce.png)
-### Telegram integrated with Jenkins - Short report summary image sent to selected chat
+## Telegram integration
+#### Jenkins sends messages with short report summary image to selected chat
 ![image](https://user-images.githubusercontent.com/38681283/120643739-355b5200-c47f-11eb-8a4d-bac92a8240c5.png)
 ### Also Telegram Integrated with me :)
 [![Telegram](https://img.shields.io/badge/-Telegram-0b0a1a?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yuriy_logvinov)
