@@ -58,7 +58,9 @@
 ## Last screenshot for live and emulated phones accordingly
 ![image](https://user-images.githubusercontent.com/38681283/120560727-eaecbd80-c40b-11eb-98c8-d8e4dfc5a6de.png)
 
-# :arrow_forward: Jenkins job (https://jenkins.autotests.cloud/job/spotify_auto_diploma/)
+# :arrow_forward: [Jenkins job][1]
+[1]: https://jenkins.autotests.cloud/job/spotify_auto_diploma
+## Job 
 ![image](https://user-images.githubusercontent.com/38681283/120642012-08a63b00-c47d-11eb-9687-b463348d2c78.png)
 ### Allure report in Jenkins
 ![image](https://user-images.githubusercontent.com/38681283/120564585-ed531580-c413-11eb-8515-40979492ec24.png)
