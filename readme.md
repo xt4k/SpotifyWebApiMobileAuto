@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/38681283/120556173-d0631600-c404-11eb-894a-6c7ec19704ca.png)
 # SPOTIFY  Auto-test project.
 ##### Done in frame of diploma qualification test for AQA school QA.GURU
-####### *If Spotify team doesn't agree with their logo presnece on - please ask me and I will delete it.
+###### *If Spotify team doesn't agree with their logo presence here - please let me know and I will delete it.
 ## Technology stack
 | GitHub | IDEA | Java | Junit5 | Gradle | Selenide | Selenoid | Allure | Jenkins |
 |:-----:|:-----:|:----:|:------:|:------:|:--------:|:--------:|:------------:|:-------:|
@@ -36,8 +36,8 @@
 #### and last screenshot for 'live' phone and emulated phone accordingly
 ![image](https://user-images.githubusercontent.com/38681283/120560727-eaecbd80-c40b-11eb-98c8-d8e4dfc5a6de.png)
 
-#### Jenkins job
-![image](https://user-images.githubusercontent.com/38681283/120564438-9b11f480-c413-11eb-9a8b-2d9fc5779b73.png)
+#### Jenkins job (https://jenkins.autotests.cloud/job/spotify_auto_diploma/)
+![image](https://user-images.githubusercontent.com/38681283/120642012-08a63b00-c47d-11eb-9687-b463348d2c78.png)
 ### Allure report
 ![image](https://user-images.githubusercontent.com/38681283/120564585-ed531580-c413-11eb-8515-40979492ec24.png)
 #### Allure TestOps (https://allure.autotests.cloud/project/204/launches)
@@ -46,8 +46,6 @@
 ![image](https://user-images.githubusercontent.com/38681283/120640315-00e59700-c47b-11eb-81e5-b46814df3ea2.png)
 ![image](https://user-images.githubusercontent.com/38681283/120640404-1eb2fc00-c47b-11eb-8630-5e78fb6e5c92.png)
 ![image](https://user-images.githubusercontent.com/38681283/120641333-2921c580-c47c-11eb-9b68-25280b4f8e6e.png)
-
-
 
 ### Jira issue (https://jira.autotests.cloud/projects/AUTO/issues/AUTO-226)
 ![image](https://user-images.githubusercontent.com/38681283/120621762-de498300-c466-11eb-9e71-f0a5001d446e.png)
