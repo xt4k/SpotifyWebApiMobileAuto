@@ -13,8 +13,10 @@
 * [Spotify mobile application autotests video](#spotify-mobile-application-autotests-video)
 * [Last screenshot for live and emulated phones accordingly](#last-screenshot-for-live-and-emulated-phones-accordingly)
 
-![tekst alternatywny](ścieżka/do/pliku)
+![JenkinsJob](https://jenkins.autotests.cloud/job/spotify_auto_diploma)
 Last screenshot for live and emulated phones accordingly
+(https://jenkins.autotests.cloud/job/spotify_auto_diploma/)
+
 
 * [Web UI autotest video](#web-ui-autotest-video)
 * [Spotify mobile application autotest video](#spotify-mobile-application-video)
