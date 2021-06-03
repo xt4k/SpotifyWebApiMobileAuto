@@ -9,6 +9,15 @@
 * [Technology stack](#technology-stack)
 * [Test Levels](#test-levels)
 * [Typical API messages](#typical-api-messages)
+* [Web UI autotest video](#web-ui-autotest-video)
+* [Spotify mobile application autotest video](#spotify-mobile-application-video)
+* [Last screenshot for 'live' phone and emulated phone accordingly](#last-screenshoot-for-live-and-emulated-phone-accordingly)
+
+
+* [Web UI autotest video](#web-ui-autotest-video)
+* [Spotify mobile application autotest video](#spotify-mobile-application-video)
+
+
 ## General info
 ### :arrow_forward: Central node of project - Jenkins CI integrated with TMS Allure TestOps
 ## Jenkins run autotests on Selenoid server and transfer test reports data into Allure TestOps, that integrated with Jira.
@@ -23,7 +32,6 @@
 |:-------------:|:--------:|:------:|:------------:|:--------------:|:---------:|:------:|
 <img src="https://user-images.githubusercontent.com/38681283/120563090-72d4c680-c410-11eb-8a3f-2309be0a818f.png" width="40" height="40"> |<img src="https://user-images.githubusercontent.com/38681283/120566097-335da880-c417-11eb-9e7b-248f6d5d4370.png" width="50" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120566010-eed20d00-c416-11eb-940d-56923ceff1bf.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120563529-79b00900-c411-11eb-8ab7-d5caf8b11ac1.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120565685-4ae86180-c416-11eb-9e62-42edc0e07e14.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120563229-bf200680-c410-11eb-91a6-d54243d0cda6.png" width="40" height="40"> | <img src="https://user-images.githubusercontent.com/38681283/120566160-54be9480-c417-11eb-86b7-4445fcdc8183.png" width="40" height="40"> |
 
-
 ## Test Levels:
 ## :white_check_mark: API      
 #### - very fast tests that request information about artists, album, market, spotify user and verify it. Tests are logging API requests, responses, expected and actual results.
@@ -32,17 +40,17 @@
 ## :white_check_mark: UI            
 #### - split into 3 set of tests: for Anonymous User, Login, Sign up, Registered User tests. Tests are logging only last screenshot, and video in normal workflow.
 #### Failed tests providing screenshotof failed steps additionally.
-#### Here it is video for passed autotest
+## Web UI autotest video
 ![findtrack](https://user-images.githubusercontent.com/38681283/120558512-43ba5700-c408-11eb-8ab4-5f9e48b952f8.gif)
 #### and last screenshot
 ![image](https://user-images.githubusercontent.com/38681283/120561043-87af5b00-c40c-11eb-8c2a-202bed1de2be.png)
-## :white_check_mark: Mobile applications           
+## :white_check_mark: Mobile application           
 #### - testset designed for Android devices - "live" and emulated phones. it verifies common functionality like search band, composition, personal information. 
 #### Tests are logging last screenshot, screenshot vor assrtional steps and storing test's workflow video (stored locally).
-#### Here it is video for mobile autotests
+## Spotify mobile application autotest video
 ![ScreenRecord_02062021_06-43-14](https://user-images.githubusercontent.com/38681283/120558842-bcb9ae80-c408-11eb-93a1-0458a09df578.gif)
 ![ScreenRecord_02062021_06-44-12](https://user-images.githubusercontent.com/38681283/120558846-bdeadb80-c408-11eb-99ae-61b1af11c2b3.gif)
-#### and last screenshot for 'live' phone and emulated phone accordingly
+## Last screenshot for 'live' phone and emulated phone accordingly
 ![image](https://user-images.githubusercontent.com/38681283/120560727-eaecbd80-c40b-11eb-98c8-d8e4dfc5a6de.png)
 
 # :arrow_forward: Jenkins job (https://jenkins.autotests.cloud/job/spotify_auto_diploma/)
