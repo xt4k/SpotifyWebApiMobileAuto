@@ -8,7 +8,7 @@
 * [General info](#general-info)
 * [Technology stack](#technology-stack)
 * [Test Levels](#test-levels)
-* [API](#api)
+* [Typical API messages](#typical-api-messages)
 ## General info
 ### :arrow_forward: Central node of project - Jenkins CI integrated with TMS Allure TestOps
 ## Jenkins run autotests on Selenoid server and transfer test reports data into Allure TestOps, that integrated with Jira.
@@ -27,7 +27,7 @@
 ## Test Levels:
 ## :white_check_mark: API      
 #### - very fast tests that request information about artists, album, market, spotify user and verify it. Tests are logging API requests, responses, expected and actual results.
-### Typically it looks like this
+## Typical API messages
 ![image](https://user-images.githubusercontent.com/38681283/120557802-233dcd00-c407-11eb-9fe2-d65052a03f41.png)
 ## :white_check_mark: UI            
 #### - split into 3 set of tests: for Anonymous User, Login, Sign up, Registered User tests. Tests are logging only last screenshot, and video in normal workflow.
