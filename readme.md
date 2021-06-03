@@ -1,9 +1,9 @@
 ![image](https://user-images.githubusercontent.com/38681283/120556173-d0631600-c404-11eb-894a-6c7ec19704ca.png)
-## SPOTIFY  Auto-test project
+## SPOTIFY Auto-test project
 ##### Done in frame of diploma qualification test for AQA school QA.GURU
 ###### *If Spotify team doesn't agree with their logo presence here - please let me know and I will delete it.
 ## Table of contents
-* [Preambula](#preambula)
+* [Preambula](#spotify)
 * [General info](#general-info)
 * [Technology stack](#technology-stack)
 * [Test Levels](#test-levels)
