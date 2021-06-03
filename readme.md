@@ -12,15 +12,9 @@
 * [Web UI autotest video](#web-ui-autotest-video)
 * [Spotify mobile application autotests video](#spotify-mobile-application-autotests-video)
 * [Last screenshot for live and emulated phones accordingly](#last-screenshot-for-live-and-emulated-phones-accordingly)
-
-![JenkinsJob](https://jenkins.autotests.cloud/job/spotify_auto_diploma)
-
-
------------
-
-
-* [Web UI autotest video](#web-ui-autotest-video)
-* [Spotify mobile application autotest video](#spotify-mobile-application-video)
+* [Spotify job screenshot](#spotify-job-screenshot)
+* [Allure report in Jenkins](#allure-report-in-jenkins)
+* [AllureTestOps screenshots](#alluretestops-screenshots)
 
 
 ## General info
@@ -57,14 +51,13 @@
 ![ScreenRecord_02062021_06-44-12](https://user-images.githubusercontent.com/38681283/120558846-bdeadb80-c408-11eb-99ae-61b1af11c2b3.gif)
 ## Last screenshot for live and emulated phones accordingly
 ![image](https://user-images.githubusercontent.com/38681283/120560727-eaecbd80-c40b-11eb-98c8-d8e4dfc5a6de.png)
-
 # :arrow_forward: [Jenkins job][1]
-[1]: https://jenkins.autotests.cloud/job/spotify_auto_diploma
-## Job 
+## Spotify job screenshot
 ![image](https://user-images.githubusercontent.com/38681283/120642012-08a63b00-c47d-11eb-9687-b463348d2c78.png)
-### Allure report in Jenkins
+## Allure report in Jenkins
 ![image](https://user-images.githubusercontent.com/38681283/120564585-ed531580-c413-11eb-8515-40979492ec24.png)
-#### Allure TestOps (https://allure.autotests.cloud/project/204/launches)
+## [Spotify Allure_TestOps][2]
+## AllureTestOps screenshots
 ![image](https://user-images.githubusercontent.com/38681283/120640087-c0861900-c47a-11eb-891e-34382f8df197.png)
 ![image](https://user-images.githubusercontent.com/38681283/120640222-e0b5d800-c47a-11eb-9fc9-15d4bce0180c.png)
 ![image](https://user-images.githubusercontent.com/38681283/120640315-00e59700-c47b-11eb-81e5-b46814df3ea2.png)
@@ -78,3 +71,6 @@
 ![image](https://user-images.githubusercontent.com/38681283/120643739-355b5200-c47f-11eb-8a4d-bac92a8240c5.png)
 ### Also Telegram Integrated with me :)
 [![Telegram](https://img.shields.io/badge/-Telegram-0b0a1a?style=for-the-badge&logo=telegram&logoColor=27A0D9)](https://t.me/yuriy_logvinov)
+
+[1]: https://jenkins.autotests.cloud/job/spotify_auto_diploma
+[2]: https://allure.autotests.cloud/project/204/launches
