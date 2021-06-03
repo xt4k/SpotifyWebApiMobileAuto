@@ -10,7 +10,7 @@
 * [Test Levels](#test-levels)
 * [Typical API messages](#typical-api-messages)
 * [Web UI autotest video](#web-ui-autotest-video)
-* [Spotify mobile application autotest video](#spotify-mobile-application-video)
+* [Spotify mobile application autotest video](#spotify-mobile-application-autotest-video)
 * [Last screenshot for live and emulated phones accordingly](#last-screenshoot-for-live-and-emulated-phones-accordingly)
 
 Last screenshot for live and emulated phones accordingly
