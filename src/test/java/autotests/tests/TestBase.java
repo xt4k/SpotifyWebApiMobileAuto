@@ -2,7 +2,7 @@ package autotests.tests;
 
 import autotests.config.testdata.TestData;
 import autotests.helpers.Auth;
-import autotests.po.BasePageObject;
+import autotests.po.pages.BasePage;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.junit5.AllureJunit5;
 import io.restassured.RestAssured;
@@ -16,27 +16,27 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
-    public static BasePageObject po = new BasePageObject();
+    public static BasePage po = new BasePage();
     public static String API_TOKEN;
 
     @BeforeAll
     static void setUp() {
         configureDriver();
         Configuration.baseUrl = TestData.getWebUrl();
-        Configuration.startMaximized=true;
+        Configuration.startMaximized = true;
         API_TOKEN = new Auth().getToken();
         RestAssured.baseURI = TestData.getApiUrl();
     }
 
     @AfterEach
     public void addAttachments() {
-        String sessionId = getSessionId();
-        attachScreenshot("Last screenshot");
-        attachPageSource();
-        attachAsText("Browser console logs", getConsoleLogs(sessionId));
-
-        closeWebDriver();
-
-        if (isVideoOn()) attachVideo(sessionId);
+        if (isUiTest()) {
+            String sessionId = getSessionId();
+            attachScreenshot("Last screenshot");
+            attachPageSource();
+            attachAsText("Browser console logs", getConsoleLogs(sessionId));
+            closeWebDriver();
+            if (isVideoOn()) attachVideo(sessionId);
+        }
     }
 }

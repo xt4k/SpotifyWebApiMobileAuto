@@ -1,10 +1,17 @@
 package autotests.tests.web;
 
+import autotests.annotations.JiraIssue;
+import autotests.annotations.JiraIssues;
+import autotests.annotations.Layer;
+import autotests.annotations.TM4J;
 import autotests.config.testdata.TestData;
-import autotests.po.BasePageObject;
-import autotests.po.TopWidget;
+import autotests.po.pages.BasePage;
+import autotests.po.widgets.Top;
 import autotests.tests.TestBase;
-import io.qameta.allure.*;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -32,10 +39,10 @@ public class AnonimousUserTests extends TestBase {
     @Test
     @TM4J("2943")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 05. UI: Check Premium Plans")
+    @Description("Test 05. UI: Check Premium Plans")
     void verifyPlansInfo() {
-        new BasePageObject().openHome();
-        new TopWidget().premium()
+        new BasePage().openHome();
+        new Top().premium()
                 .goPlansDetails()
                 .verifyPlansInfo();
     }
@@ -44,7 +51,7 @@ public class AnonimousUserTests extends TestBase {
     @Test
     @JiraIssues({@JiraIssue("AUTO-226")})
     @TM4J("2944")
-    @DisplayName("Test 06. UI: Verify Download Windows Application button")
+    @Description("Test 06. UI: Verify Download Windows Application button")
     void verifyDownloadWinButton() {
         step("Open Homepage", () -> open(baseUrl + "download/windows"));
 
@@ -59,14 +66,13 @@ public class AnonimousUserTests extends TestBase {
                     .sibling(0)
                     .shouldHave(text("Play millions of songs on your device."));
         });
-
     }
 
     @Tag("download")
     @Test
     @TM4J("2946")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 07. UI: Verify Download Apple Application button")
+    @Description("Test 07. UI: Verify Download Apple Application button")
     void verifyDownloadAppleButton() {
         step("Open Homepage", () -> open(baseUrl + "download/windows"));
 
@@ -91,7 +97,7 @@ public class AnonimousUserTests extends TestBase {
     @Test
     @JiraIssues({@JiraIssue("AUTO-226")})
     @TM4J("2945")
-    @DisplayName("Test 08. UI: Verify 'GET IT ON Google Play' button.")
+    @Description("Test 08. UI: Verify 'GET IT ON Google Play' button.")
     void verifyDownloadGoogleButton() {
         step("Open Homepage", () -> open(baseUrl + "download/windows"));
 
@@ -112,7 +118,7 @@ public class AnonimousUserTests extends TestBase {
     @Test
     @TM4J("4444")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 09. UI: Check Extended Premium Period Conditions.")
+    @Description("Test 09. UI: Check Extended Premium Period Conditions.")
     void verifyExtendedPremiumConditionInfoMistaken() {
         step("Open Homepage", () -> open(baseUrl));
         step("Navigate to premium page", () -> $("a[data-ga-action='premium']").click());
@@ -124,7 +130,7 @@ public class AnonimousUserTests extends TestBase {
     @Test
     @TM4J("4455")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 10. UI: Check Extended Premium Period Conditions.")
+    @Description("Test 10. UI: Check Extended Premium Period Conditions.")
     void verifyExtendedPremiumConditionInfo() {
         step("Open Homepage", () -> open(baseUrl));
         step("Navigate to premium page", () -> $("a[data-ga-action='premium']").click());

@@ -1,11 +1,16 @@
 package autotests.tests.web;
 
-
+import autotests.annotations.JiraIssue;
+import autotests.annotations.JiraIssues;
+import autotests.annotations.Layer;
+import autotests.annotations.TM4J;
 import autotests.config.testdata.TestData;
-import autotests.po.AccountMenuWidget;
-import autotests.po.TopWidget;
+import autotests.po.widgets.AccountMenu;
+import autotests.po.widgets.Top;
 import autotests.tests.TestBase;
-import io.qameta.allure.*;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -24,15 +29,15 @@ public class LoginTests extends TestBase {
     @Test
     @TM4J("2949")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 13. UI: Successful login spotify as Free Plan user")
+    @DisplayName("Test 13. UI: Successful login spotify as free plan user")
     void loginTest() {
         po.openHome();
-        new TopWidget().doLogin()
+        new Top().doLogin()
                 .setLogin(TestData.getUserLogin())
                 .setPass(TestData.getUserPassword())
                 .login()
                 .insertCookie();
 
-        new AccountMenuWidget().verifyNickName(TestData.getUserNickName());
+        new AccountMenu().verifyNickName(TestData.getUserNickName());
     }
 }

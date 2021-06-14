@@ -9,22 +9,19 @@ version '1.0-SNAPSHOT'
 repositories {
     maven { url "https://plugins.gradle.org/m2/" }
     maven { url "https://dl.bintray.com/qameta/maven-unstable/" }
-    maven { url "https://github.com/allure-framework/allure2" }
-    maven { url "https://github.com/allure-framework/allure-java" }
     mavenCentral()
     mavenLocal()
 }
 
-def allureVersion = "2.13.9",
-    selenideVersion = "5.20.1",
-
+def allureVersion = "2.14.0",
+    selenideVersion = "5.22.0",
     junitVersion = "5.8.0-M1",
     appiumVersion = "7.5.1",
     slf4jVersion = "1.7.30",
     ownerVersion = "1.0.12",
     aspectjVersion = "1.9.6",
-    raVersion = "4.3.3",
-    assertjVer = "3.19.0",
+    restAssuredVersion = "4.3.3",
+    assertjVersion = "3.19.0",
     lombokVersion = "1.18.20",
     fakerVersion = "1.0.2",
     jacksonVersion = "2.12.1",
@@ -40,13 +37,7 @@ allure {
     }
 }
 
-
 dependencies {
-    compile("commons-io:commons-io:2.6",
-            "io.qameta.allure:allure-java-commons:${allureVersion}",
-            "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
-            "org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-
     testImplementation(
             "com.browserup:browserup-proxy-core:${proxyVersion}",
             "org.projectlombok:lombok:${lombokVersion}",
@@ -54,7 +45,7 @@ dependencies {
             "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}",
             "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}",
             "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}",
-            "org.assertj:assertj-core:${assertjVer}",
+            "org.assertj:assertj-core:${assertjVersion}",
             "org.slf4j:slf4j-api:${slf4jVersion}",
             "org.aspectj:aspectjweaver:${aspectjVersion}",
             "com.codeborne:selenide:${selenideVersion}",
@@ -62,7 +53,7 @@ dependencies {
             "io.qameta.allure:allure-rest-assured:${allureVersion}",
             "io.qameta.allure:allure-selenide:${allureVersion}",
             "io.appium:java-client:${appiumVersion}",
-            "io.rest-assured:rest-assured:${raVersion}",
+            "io.rest-assured:rest-assured:${restAssuredVersion}",
             "org.aeonbits.owner:owner:${ownerVersion}",
             "org.junit.jupiter:junit-jupiter-params:${junitVersion}",
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}")
@@ -73,10 +64,6 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
-}
-
-test {
-    useJUnitPlatform()
 }
 
 tasks.withType(Test) {
@@ -92,7 +79,6 @@ task web_tests(type: Test) {
         includeTags 'web'
     }
 }
-
 
 task spotify_tests(type: Test) {
     useJUnitPlatform {
@@ -122,19 +108,16 @@ task mob_tests(type: Test) {
     useJUnitPlatform {
         includeTags 'mobile'
     }
-
 }
 
 task login_test(type: Test) {
     useJUnitPlatform {
         includeTags 'login'
     }
-
 }
 
-task logged_tests(type: Test) {
+task account_tests(type: Test) {
     useJUnitPlatform {
-        includeTags 'logged'
+        includeTags 'account'
     }
-
 }

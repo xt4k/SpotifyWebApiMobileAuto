@@ -1,4 +1,4 @@
-package autotests.po;
+package autotests.po.pages;
 
 import autotests.config.testdata.TestData;
 import com.codeborne.selenide.ElementsCollection;
@@ -10,12 +10,12 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class PremiumPage extends BasePageObject {
+public class Premium extends BasePage {
     SelenideElement seViewPlans = $("a[href='#plans']");
     ElementsCollection ecPlansHeaders = $$("div[data-event-campaign-id][data-current-plan-text]");
 
     @Step("Go to plans details")
-    public PremiumPage goPlansDetails() {
+    public Premium goPlansDetails() {
         seViewPlans.click();
         return this;
     }

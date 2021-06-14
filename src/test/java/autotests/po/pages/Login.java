@@ -1,36 +1,33 @@
-package autotests.po;
+package autotests.po.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static autotests.helpers.AttachmentsHelper.attachScreenshot;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 
-public class LoginPage extends BasePageObject {
+public class Login extends BasePage {
     SelenideElement loginField = $("#login-username");
     SelenideElement passField = $("#login-password");
     SelenideElement seLogin = $("#login-button");
 
     @Step("Set Login field with {login}")
-    public LoginPage setLogin(String login) {
+    public Login setLogin(String login) {
         setSeValue(loginField, login);
         return this;
     }
 
     @Step("Set Password field with ***")
-    public LoginPage setPass(String s) {
+    public Login setPass(String s) {
         setSeValue(passField, s);
         return this;
     }
 
     @Step("Login.")
-    public PlaylistPage login() {
-       // attachScreenshot("before log in");
+    public Playlist login() {
         seLogin.click();
         sleep(1000);
-        //attachScreenshot("logged in");
-        return new PlaylistPage();
+        return new Playlist();
     }
 }

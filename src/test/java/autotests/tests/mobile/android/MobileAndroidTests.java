@@ -1,8 +1,15 @@
 package autotests.tests.mobile.android;
 
+import autotests.annotations.JiraIssue;
+import autotests.annotations.JiraIssues;
+import autotests.annotations.Layer;
+import autotests.annotations.TM4J;
 import autotests.config.testdata.TestData;
 import io.appium.java_client.MobileBy;
-import io.qameta.allure.*;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -25,7 +32,7 @@ import static io.qameta.allure.Allure.step;
 public class MobileAndroidTests extends MobileTestBase {
 
     @Test
-    @DisplayName("Test 15. Mobile: Search band in mobile application.")
+    @Description("Test 15. Mobile: Search band in mobile application.")
     @TM4J("SX-M1")
     @JiraIssues({@JiraIssue("AUTO-226")})
     void searchBand() {
@@ -42,31 +49,25 @@ public class MobileAndroidTests extends MobileTestBase {
         step("Check if band is found", () -> {
             $$(MobileBy.id("com.spotify.music:id/card_title"))
                     .shouldHave(sizeGreaterThan(0))
-                    .filter(text(TestData.getMusicBand())).shouldHave(sizeGreaterThan(0));
+                    .filter(text(TestData.getMusicBand()))
+                    .shouldHave(sizeGreaterThan(0));
         });
 
         step("Check for any song", () -> {
             $$(MobileBy.id("android:id/text2"))
-                    .filter(text(TestData.getMusicBandProduct())).shouldHave(sizeGreaterThan(0));
-
+                    .filter(text(TestData.getMusicBandProduct()))
+                    .shouldHave(sizeGreaterThan(0));
         });
 
         step("Check if famous song is found", () -> {
             $$(MobileBy.id("android:id/text1"))
-                    .filter(text(TestData.getMusicBandComposition())).shouldHave(sizeGreaterThan(0));
-            attachScreenshot("Check found elements");
-        });
-
-        step("Close Spotify application", () -> {
-            back();
-            back();
-            back();
-            back();
+                    .filter(text(TestData.getMusicBandComposition()))
+                    .shouldHave(sizeGreaterThan(0));
         });
     }
 
     @Test
-    @DisplayName("Test 16. Mobile: Search composition in mobile application.")
+    @Description("Test 16. Mobile: Search composition in mobile application.")
     @TM4J("SX-M2")
     @JiraIssues({@JiraIssue("AUTO-226")})
     void searchComposition() {
@@ -82,25 +83,19 @@ public class MobileAndroidTests extends MobileTestBase {
         step("Check if composition is found", () -> {
             $$(MobileBy.id("android:id/text1"))
                     .shouldHave(sizeGreaterThan(0))
-                    .filter(text(TestData.getSoundComposition())).shouldHave(sizeGreaterThan(0));
+                    .filter(text(TestData.getSoundComposition()))
+                    .shouldHave(sizeGreaterThan(0));
         });
 
         step("Check for song author.", () -> {
             $$(MobileBy.id("android:id/text2"))
-                    .filter(text(TestData.getSoundCompositionBand())).shouldHave(sizeGreaterThan(0));
-            attachScreenshot("Check found elements");
-        });
-
-        step("Close Spotify application", () -> {
-            back();
-            back();
-            back();
-            back();
+                    .filter(text(TestData.getSoundCompositionBand()))
+                    .shouldHave(sizeGreaterThan(0));
         });
     }
 
     @Test
-    @DisplayName("Test 17. Mobile: Check personal profile info.")
+    @Description("Test 17. Mobile: Check personal profile info.")
     @TM4J("SX-M3")
     @JiraIssues({@JiraIssue("AUTO-226")})
     void verifyMyInfo() {
@@ -124,13 +119,6 @@ public class MobileAndroidTests extends MobileTestBase {
         step("Check email info", () -> {
             $(MobileBy.id("com.spotify.music:id/email"))
                     .shouldHave(text(TestData.getUserLogin()));
-            attachScreenshot("Check email");
-        });
-
-        step("Close Spotify application", () -> {
-            back();
-            back();
-            back();
         });
     }
 }

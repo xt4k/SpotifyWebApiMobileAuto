@@ -71,11 +71,9 @@ public interface TestDataConfig extends Config {
     @Key("sound.composition.band")
     String soundCompositionBand();
 
-
     @Key("preferential.period.wrong")
     String preferentialPeriod();
 
     @Key("preferential.period")
     String preferentialPeriodWrong();
-
 }

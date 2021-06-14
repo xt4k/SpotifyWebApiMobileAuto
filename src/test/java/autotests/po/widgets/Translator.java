@@ -1,5 +1,6 @@
-package autotests.po;
+package autotests.po.widgets;
 
+import autotests.po.pages.BasePage;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.SelenideDriver;
@@ -11,7 +12,7 @@ import static autotests.drivers.DriverHelper.getDriverConfig;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.$;
 
-public class TranslatorWidget extends BasePageObject {
+public class Translator extends BasePage {
 
     //SelenideElement seMicro = $("#ow47");
     SelenideElement seEngText = $("textarea[rows='1']");

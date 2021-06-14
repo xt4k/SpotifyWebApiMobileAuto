@@ -1,11 +1,12 @@
-package autotests.po;
+package autotests.po.pages;
 
+import autotests.po.widgets.Translator;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class CaptchaTaskPopup extends BasePageObject {
+public class CaptchaPopup extends BasePage {
     SelenideElement seAudio = $("#recaptcha-audio-button");
     SelenideElement sePlay = $("button[aria-labelledby='audio-instructions rc-response-label']");
     SelenideElement seAudioResponse = $("#audio-response");
@@ -18,9 +19,9 @@ public class CaptchaTaskPopup extends BasePageObject {
         switchTo().innerFrame(frameName);
         seAudio.click();
         sleep(5000);
-        new TranslatorWidget().prepare();
+        new Translator().prepare();
         sePlay.click();
-        String secretWord = new TranslatorWidget().takeSecret();
+        String secretWord = new Translator().takeSecret();
         seAudioResponse.setValue(secretWord);
         seConfirm.click();
     }

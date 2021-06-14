@@ -12,10 +12,7 @@ import java.net.URL;
 import static autotests.drivers.DriverHelper.getDriverConfig;
 import static io.appium.java_client.remote.MobileCapabilityType.*;
 
-
-public class MobAndroidDriverHelper implements WebDriverProvider {
-    WebDriver customDriver;
-
+public class AndroidDriverHelper implements WebDriverProvider {
 
     public static URL getUrl(DesiredCapabilities dc) {
         try {
@@ -55,8 +52,6 @@ public class MobAndroidDriverHelper implements WebDriverProvider {
             capabilities.setCapability(FULL_RESET, false);
             capabilities.setCapability("local.video.storage", getDriverConfig().getMobileVideoStorage());
         }
-        customDriver = new AndroidDriver(getUrl(capabilities), capabilities);
-
-        return customDriver;
+        return new AndroidDriver(getUrl(capabilities), capabilities);
     }
 }

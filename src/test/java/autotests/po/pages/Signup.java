@@ -1,4 +1,4 @@
-package autotests.po;
+package autotests.po.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
@@ -9,7 +9,7 @@ import java.util.Date;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class SignupPage extends BasePageObject {
+public class Signup extends BasePage {
     SelenideElement seTermConditions = $("#facebook-terms-conditions-checkbox");
     SelenideElement seEmail = $("#email");
     SelenideElement seEmailConfirm = $("#confirm");
@@ -54,9 +54,9 @@ public class SignupPage extends BasePageObject {
     }
 
     @Step("Submit spotify registration profile form")
-    public PlaylistPage signup() {
+    public Playlist signup() {
         seSubmitForm.click();
         insertCookie();
-        return new PlaylistPage();
+        return new Playlist();
     }
 }

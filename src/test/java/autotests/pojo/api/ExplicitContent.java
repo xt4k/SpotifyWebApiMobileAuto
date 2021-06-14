@@ -18,12 +18,4 @@ public class ExplicitContent {
         this.filterLocked = false;
         this.filterEnabled = false;
     }
-
-    public boolean isFilterLocked() {
-        return filterLocked;
-    }
-
-    public boolean isFilterEnabled() {
-        return filterEnabled;
-    }
 }

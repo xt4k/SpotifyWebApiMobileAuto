@@ -28,7 +28,6 @@ import static io.qameta.allure.Allure.addAttachment;
 import static io.qameta.allure.Allure.step;
 import static java.lang.String.format;
 
-
 public class AttachmentsHelper {
     private static final Logger LOG = LoggerFactory.getLogger(AttachmentsHelper.class);
 
@@ -68,7 +67,7 @@ public class AttachmentsHelper {
     }
 
     public static void saveVideoLocally(String sessionId, String base64output) {
-        if (!(getDriverConfig().getMobileVideoStorage() ==null)) {
+        if (!(getDriverConfig().getMobileVideoStorage() == null)) {
             String dateStr = new SimpleDateFormat("ddMMyyyy_hh-mm-ss").format(new Date());
             try {
                 byte[] data = Base64.getDecoder().decode(base64output);

@@ -1,11 +1,14 @@
 package autotests.tests.web;
 
-
+import autotests.annotations.JiraIssue;
+import autotests.annotations.JiraIssues;
+import autotests.annotations.Layer;
+import autotests.annotations.TM4J;
 import autotests.config.testdata.TestData;
-import autotests.po.AccountMenuWidget;
-import autotests.po.CapchaWidget;
-import autotests.po.SignupPage;
-import autotests.po.TopWidget;
+import autotests.po.pages.Signup;
+import autotests.po.widgets.AccountMenu;
+import autotests.po.widgets.Capcha;
+import autotests.po.widgets.Top;
 import autotests.tests.TestBase;
 import autotests.utils.CommonOperations;
 import com.codeborne.selenide.Configuration;
@@ -13,9 +16,11 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.SelenideDriver;
 import com.github.javafaker.Faker;
-import io.qameta.allure.*;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -46,17 +51,13 @@ public class SignUpTests extends TestBase {
     @TM4J("2950")
     @JiraIssues({@JiraIssue("AUTO-226")})
     //@LabelAnnotations({@LabelAnnotation("Automatic"),@LabelAnnotation("Microphone"),("Failed test")})
-    @DisplayName("Test 14. UI: SignUp (lambda step, failed test)")
+    @Description("Test 14. UI: SignUp (lambda step, failed test)")
     void signUpSpotify() {
         Faker faker = new Faker();
 
-        step("Open Homepage", () -> {
-            open(Configuration.baseUrl);
-        });
+        step("Open Homepage", () -> open(Configuration.baseUrl));
 
-        step("Navigate to Sign up page", () -> {
-            $("a[data-ga-action='sign-up']").click();
-        });
+        step("Navigate to Sign up page", () -> $("a[data-ga-action='sign-up']").click());
 
         step("Insert Cookie", () -> {
             getWebDriver().manage().addCookie(new Cookie("OptanonAlertBoxClosed", now().format(ofPattern("yyyy-MM-dd"))));
@@ -115,7 +116,6 @@ public class SignUpTests extends TestBase {
             browserSize = getDriverConfig().webBrowserSize();
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
-
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--use-fake-ui-for-media-stream");
             capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
@@ -136,12 +136,9 @@ public class SignUpTests extends TestBase {
                 $("#audio-response").sendKeys(secretWord);
                 $("#recaptcha-verify-button").click();
             });
-
         });
 
-        step("Submit form.", () -> {
-            $("button[type='submit']").click();
-        });
+        step("Submit form.", () -> $("button[type='submit']").click());
 
         step("Verify if User Nickname equal to submitted.", () -> {
             $("span[data-testid]").shouldHave(text(faker.superhero().name()));
@@ -153,16 +150,16 @@ public class SignUpTests extends TestBase {
     @Test
     @TM4J("2951")
     @JiraIssues({@JiraIssue("AUTO-226")})
-    @DisplayName("Test 15 UI: SignUp (step form - disabled test).")
+    @Description("Test 15 UI: SignUp (step form - disabled test).")
     void signUpSpotifyNoLambda() {
         Faker faker = new Faker();
 
         po.openHome();
-        new TopWidget().signUp()
+        new Top().signUp()
                 .fillSignUpForm(faker);
-        new CapchaWidget().goThrough();
-        new SignupPage().signup();
-        new AccountMenuWidget().verifyNickName(TestData.getUserNickName());
+        new Capcha().goThrough();
+        new Signup().signup();
+        new AccountMenu().verifyNickName(TestData.getUserNickName());
     }
 
 }

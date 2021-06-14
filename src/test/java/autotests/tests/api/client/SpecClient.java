@@ -4,9 +4,7 @@ import autotests.pojo.api.search.item.Form;
 import autotests.tests.api.spec.Spec;
 import io.restassured.response.Response;
 
-
 public class SpecClient {
-
     public Response searchItem(Form form) {
         return Spec.requestSpec()
                 .when()

@@ -1,12 +1,14 @@
-package autotests.po;
+package autotests.po.widgets;
 
+import autotests.po.pages.BasePage;
+import autotests.po.pages.CaptchaPopup;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
 
-public class CapchaWidget extends BasePageObject {
+public class Capcha extends BasePage {
     SelenideElement seNotBot = $("#rc-anchor-container");
     SelenideElement seCapchaFrame = $("#v2-container [title='reCAPTCHA']");
 
@@ -15,7 +17,7 @@ public class CapchaWidget extends BasePageObject {
         String frameName = seCapchaFrame.getAttribute("name");
         switchTo().innerFrame(frameName);
         seNotBot.click();
-        new CaptchaTaskPopup().doTask();
+        new CaptchaPopup().doTask();
     }
 
 }

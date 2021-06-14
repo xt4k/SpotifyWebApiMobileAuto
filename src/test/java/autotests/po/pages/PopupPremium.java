@@ -1,12 +1,13 @@
-package autotests.po;
+package autotests.po.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static autotests.helpers.AttachmentsHelper.attachScreenshot;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
-public class PopupPremium extends BasePageObject {
+public class PopupPremium extends BasePage {
     SelenideElement sePremiumPopup = $("div[role='dialog'][tabindex]");
 
     @Step("Close Premium popup")
@@ -14,6 +15,7 @@ public class PopupPremium extends BasePageObject {
         if (sePremiumPopup.isDisplayed())
             sePremiumPopup.$$("button").last().click();
         insertCookie();
-       // attachScreenshot("Premium popup closed");
+        sleep(1000);
+        attachScreenshot("Premium popup closed");
     }
 }

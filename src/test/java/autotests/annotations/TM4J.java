@@ -1,4 +1,6 @@
-package io.qameta.allure;
+package autotests.annotations;
+
+import io.qameta.allure.LabelAnnotation;
 
 import java.lang.annotation.*;
 
@@ -9,10 +11,8 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-@Repeatable(JiraIssues.class)
-
-@LabelAnnotation(name = "jira")
-public @interface JiraIssue {
+@LabelAnnotation(name = "tm4j")
+public @interface TM4J {
 
     String value();
 

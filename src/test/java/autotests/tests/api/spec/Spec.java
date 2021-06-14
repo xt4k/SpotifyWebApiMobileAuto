@@ -38,5 +38,4 @@ public class Spec {
                         "Via", "HTTP/2 edgeproxy, 1.1 google");
         return responseSpec;
     }
-
 }

@@ -1,6 +1,6 @@
 package autotests.tests.mobile.android;
 
-import autotests.drivers.MobAndroidDriverHelper;
+import autotests.drivers.AndroidDriverHelper;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidStartScreenRecordingOptions;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -14,22 +14,23 @@ import static autotests.drivers.DriverHelper.getConsoleLogs;
 import static autotests.drivers.DriverHelper.getSessionId;
 import static autotests.helpers.AttachmentsHelper.*;
 import static com.codeborne.selenide.Configuration.*;
+import static com.codeborne.selenide.Selenide.back;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static io.qameta.allure.Allure.step;
 
 public class MobileTestBase {
 
     @BeforeAll
     public static void setUp() {
         addListener("AllureSelenide", new AllureSelenide());
-        browser = MobAndroidDriverHelper.class.getName();
+        browser = AndroidDriverHelper.class.getName();
         startMaximized = false;
         browserSize = null;
         timeout = 15000;
     }
-
 
     @BeforeEach
     void openUp() {
@@ -40,8 +41,17 @@ public class MobileTestBase {
 
     @AfterEach
     public void addAttachments() {
+        attachScreenshot("Last test screenshot for found elements");
+
+        step("Close Spotify application", () -> {
+            back();
+            back();
+            back();
+            back();
+        });
+
         String sessionId = getSessionId();
-        attachScreenshot("Last screenshot");
+
         attachPageSource();
         attachAsText("Get logs", getConsoleLogs(sessionId));
 

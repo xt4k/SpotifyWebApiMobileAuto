@@ -65,31 +65,4 @@ public class ProfileInfo {
         this.email = TestData.getUserLogin();
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public ExternalUrls getExternalUrls() {
-        return externalUrls;
-    }
-
-    public String getUri() {
-        return uri;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 }
