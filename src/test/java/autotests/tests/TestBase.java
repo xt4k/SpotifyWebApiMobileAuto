@@ -21,9 +21,11 @@ public class TestBase {
 
     @BeforeAll
     static void setUp() {
-        configureDriver();
-        Configuration.baseUrl = TestData.getWebUrl();
-        Configuration.startMaximized = true;
+        if (isUiTest()) {
+            configureDriver();
+            Configuration.baseUrl = TestData.getWebUrl();
+            Configuration.startMaximized = true;
+        }
         API_TOKEN = new Auth().getToken();
         RestAssured.baseURI = TestData.getApiUrl();
     }

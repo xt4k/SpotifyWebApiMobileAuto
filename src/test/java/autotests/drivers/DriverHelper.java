@@ -68,22 +68,21 @@ public class DriverHelper {
         browserVersion = getDriverConfig().webBrowserVersion();
         browserSize = getDriverConfig().webBrowserSize();
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        if (isUiTest()) {
-            if ("chrome".equals(getDriverConfig().webBrowser())) {
-                ChromeOptions chromeOptions = new ChromeOptions();
-                Map<String, Object> prefs = new HashMap<>();
-                prefs.put("download.prompt_for_download", false);
-                prefs.put("profile.default_content_setting_values.notifications", 2);
-                prefs.put("credentials_enable_service", false);
-                prefs.put("profile.password_manager_enabled", false);
-                chromeOptions.addArguments("--safebrowsing-disable-download-protection");
-                chromeOptions.addArguments("--use-fake-ui-for-media-stream");
-                chromeOptions.addArguments("--safebrowsing-disable-extension-blacklist");
-                chromeOptions.addArguments("disable-infobars");
-                chromeOptions.setExperimentalOption("prefs", prefs);
-                capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-            }
+        if ("chrome".equals(getDriverConfig().webBrowser())) {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            Map<String, Object> prefs = new HashMap<>();
+            prefs.put("download.prompt_for_download", false);
+            prefs.put("profile.default_content_setting_values.notifications", 2);
+            prefs.put("credentials_enable_service", false);
+            prefs.put("profile.password_manager_enabled", false);
+            chromeOptions.addArguments("--safebrowsing-disable-download-protection");
+            chromeOptions.addArguments("--use-fake-ui-for-media-stream");
+            chromeOptions.addArguments("--safebrowsing-disable-extension-blacklist");
+            chromeOptions.addArguments("disable-infobars");
+            chromeOptions.setExperimentalOption("prefs", prefs);
+            capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         }
+
         if (isRemoteWebDriver()) {// selenoid
             System.out.println("isRemoteWebDriver: " + isRemoteWebDriver());
             capabilities.setCapability("enableVNC", true);
